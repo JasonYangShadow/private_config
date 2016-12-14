@@ -166,3 +166,5 @@ bar {
 
 #exec autostart script
 exec /home/jason/.autostart.sh &
+exec ibus-daemon &
+exec nm-applet &
