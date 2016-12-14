@@ -20,6 +20,18 @@ let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
 
+"tagbar plugin
+Plugin 'majutsushi/tagbar'
+nmap <F8> :TagbarToggle<CR>
+
+"color theme plugin
+Plugin 'altercation/vim-colors-solarized'
+syntax enable              "required
+set background=dark
+colorscheme solarized
+
+"vim latex plugin
+Plugin 'lervag/vimtex'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
