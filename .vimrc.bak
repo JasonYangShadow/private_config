@@ -67,7 +67,5 @@ Plugin 'davidhalter/jedi-vim'
 "vimshell
 Plugin 'shougo/vimshell.vim'
 
-"this is my final vimrc
-
 call vundle#end()            " required
 filetype plugin indent on    " required
