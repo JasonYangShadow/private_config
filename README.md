@@ -1,13 +1,6 @@
-i3.bak is the configuration file of my i3 window manager
-i changed some shortcuts to make it adapt to my keyboard.
+this is an automatic backup private repository. The cronjob is runing on my computer, in which a monitor job is runing for detecting any modification happends and uploading the latest modified version to github.
 
-
-vimrc.bak is the configuration file of my vim. It contains basic plugins that i need. Check it out and install vundle first then use the command 'PluginInstall' to automatically add the plugins.
-'''attention that, one needs to create colors folder under ~/.vim/colors and copy color theme to it. otherwise, the vim will show error on color theme not found.
-
-
-
-
+YOU CAN REFER THESE SCRIPTS
 
 editored by Jason Yang
 date: 2016.12.14
