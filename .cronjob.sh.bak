@@ -1,0 +1,60 @@
+#!/bin/bash
+
+md5create(){
+  ## $1 will be the file route
+  filename=`basename $1`
+  md5value=`md5sum $1|awk '{print $1}'`
+  echo $md5value > "$md5file_route/$filename.md5"
+}
+
+md5check(){
+  ## $1 will be the file route
+  filename=`basename $1`
+  md5_curr_value=`md5sum $1|awk '{print $1}'`
+  if [[ -f "$md5file_route/$filename.md5" ]]; then
+  	md5value=`cat "$md5file_route/$filename.md5"`
+	if [[ $md5value == $md5_curr_value ]]; then
+		return 1	
+	else
+		echo $md5_curr_value>"$md5file_route/$filename.md5"
+		return 0
+	fi	
+  else
+	md5create $1
+	return 0
+  fi
+}
+
+gitbackup(){
+ ##$1 will be the file route
+ ##$2 will be the git route
+ if md5check $1; then
+	echo "========== detected $1 file changed =========="
+	filename=`basename $1`
+	cd $2 
+	date=`date`
+	cp $1 "$filename.bak"
+	`git add "$filename.bak"`
+	`git commit -m "$date-$filename-autobackup"`
+	`proxychains git push origin master`
+	echo "$date automatically backup $1 finished..."
+ fi 
+}
+
+md5file_route="/home/jason/.md5files"
+configfile="$md5file_route/config"
+
+if [[ ! -d $md5file_route ]]; then
+	mkdir -p $md5file_route
+	echo "#file_route=git_route">"$configfile"
+	echo "I don't find md5files folder, and i will create the folder and a sample config file,but you need to manully modify config file"
+else
+	IFS="="
+	while read -r file git
+	do
+	if [[ $file =~ ^[^#].* ]]; then
+		gitbackup $file $git
+	fi
+	done < $configfile
+fi
+
