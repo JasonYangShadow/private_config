@@ -45,6 +45,7 @@ bindsym $mod+Shift+Ctrl+f exec thunar
 bindsym $mod+Shift+Ctrl+t exec thunderbird
 bindsym $mod+Shift+Ctrl+q exec qpdfview
 bindsym $mod+Shift+Ctrl+s exec subl3
+bindsym $mod+Shift+Ctrl+l exec blurlock
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
