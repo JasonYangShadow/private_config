@@ -7,10 +7,10 @@ command=/usr/lib/i3blocks/memory
 separator=true
 interval=30
 
-[swap]
-label=Swap:
-command=/usr/lib/i3blocks/memory swap
-interval=30
+#[swap]
+#label=Swap:
+#command=/usr/lib/i3blocks/memory swap
+#interval=30
 
 #[Weather]
 #command=~/.i3/IconicWeather.sh "200210"
