@@ -1,5 +1,6 @@
 set nocompatible              " required
 set number
+set spell spelllang=en_us
 filetype off                  " required
 
 set rtp+=~/.vim/bundle/Vundle.vim
