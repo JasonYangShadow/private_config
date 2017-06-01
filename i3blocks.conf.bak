@@ -2,7 +2,7 @@
 separator_block_width=14
 
 [memory]
-label=Mem:
+label=
 command=/usr/lib/i3blocks/memory
 separator=true
 interval=30
@@ -12,17 +12,6 @@ interval=30
 #command=/usr/lib/i3blocks/memory swap
 #interval=30
 
-#[Weather]
-#command=~/.i3/IconicWeather.sh "200210"
-#interval=1800
-#color=#e97ac8
-
-#[mail]
-#label= 
-#command=~/.i3/.mail.sh.x
-#interval=100
-#color=#7F00FF 
-
 #[disk-root]
 #label=:
 #command=/usr/lib/i3blocks/disk /
@@ -31,7 +20,7 @@ interval=30
 
 
 [disk-home]
-label=:
+label=
 command=/usr/lib/i3blocks/disk $HOME
 interval=30
 color=#859900
@@ -42,37 +31,38 @@ color=#859900
 #color=#d33682
 #interval=5
 
-
+[network]
+label=
+instance=enp0s25
+command=/usr/lib/i3blcoks/iface
+interval=10
 
 [wireless]
-label=W
-instance=wlo1
+label=
+instance=wlp2s0
 command=/usr/lib/i3blocks/iface
 color=#00FF00
 interval=10
 
-#[strength]
-#command=echo "$(iw dev wlp5s0 link | grep signal | cut -d " " -f 2-)"
-#interval=10
-#color=#cb4b16
-
 [temp]
 label=
-command=echo "$(sensors coretemp-isa-0000 | awk '/Physical/ {print $4}')"
+command=echo "$(sensors coretemp-isa-0000 | awk '/Core 0:/ {print $3}')"
 interval=10
 color=#b58900
 
+#install yaourt -S sysstat
 [cpu]
-label=CPU
+label=
 command=/usr/lib/i3blocks/cpu_usage
 interval=10
-min_width=CPU: 100.00%
+min_width=100.00%
 separator=true
 
 [battery]
-label=BAT
-command=/usr/lib/i3blocks/battery BAT0
-interval=30
+label=
+command=python3 /home/jason/.i3/battery.py
+markup=pango
+interval=10
 
 [load]
 label= 
