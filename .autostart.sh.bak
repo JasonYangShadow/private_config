@@ -1,0 +1,63 @@
+#!/bin/bash
+
+exec ~/.screenlayout/.home.sh &
+
+InstCheck(){
+ inst=`ps -ef|grep -v grep|grep $1|wc -l`
+ if [ $inst -ge 1 ];then
+     return 0 
+ else
+     return 1 
+ fi
+}
+
+InstCheck ibus-daemon
+if [ $? -ne 0 ];then
+    ibus-daemon & 
+fi
+
+InstCheck nm-applet 
+if [ $? -ne 0 ];then
+    nm-applet & 
+fi
+
+InstCheck blueman-applet 
+if [ $? -ne 0 ];then
+    blueman-applet & 
+fi
+
+InstCheck slack 
+if [ $? -ne 0 ];then
+    slack & 
+fi
+
+InstCheck thunderbird 
+if [ $? -ne 0 ];then
+    thunderbird & 
+fi
+
+InstCheck xfce4-power-manager 
+if [ $? -ne 0 ];then
+    xfce4-power-manager & 
+fi
+
+InstCheck pamac-tray 
+if [ $? -ne 0 ];then
+    pamac-tray & 
+fi
+
+InstCheck unclutter
+if [ $? -ne 0 ];then
+    unclutter -idle 2 &
+fi
+
+InstCheck redshift
+if [ $? -ne 0 ];then
+    redshift -t 6500:4500 -l 35.4:139.4 &
+fi
+
+InstCheck chrome
+if [ $? -ne 0 ];then
+    google-chrome-stable &
+fi
+
