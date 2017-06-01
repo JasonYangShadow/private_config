@@ -35,6 +35,7 @@ color=#859900
 label=
 instance=enp0s25
 command=/usr/lib/i3blcoks/iface
+color=#00FF00
 interval=10
 
 [wireless]
