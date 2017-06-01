@@ -171,7 +171,7 @@ bar {
   status_command i3blocks -c ~/.i3/i3blocks.conf
   colors {
     separator #268bd2
-    background #111111
+    background #333333
     statusline #839496
     focused_workspace #fdf6e3 #6c71c4 #fdf6e3
     active_workspace #fdf6e3 #6c71c4 #fdf6e3
@@ -218,8 +218,8 @@ bindsym XF86AudioPrev exec playerctl previous
 #for_window [class="^.*"] border pixel 2
 
 # Set inner/outer gaps
-gaps inner 10
-gaps outer 10
+gaps inner 15
+gaps outer 15
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
