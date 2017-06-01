@@ -36,7 +36,8 @@ gitbackup(){
 	cp $1 "$filename.bak"
 	`git add "$filename.bak"`
 	`git commit -m "$date-$filename-autobackup"`
-	`proxychains git push origin master`
+	#`proxychains git push origin master`
+	`git push origin master`
 	echo "$date automatically backup $1 finished..."
  fi 
 }
