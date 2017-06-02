@@ -51,7 +51,7 @@ let g:spacevim_windows_leader = 's'
 let g:spacevim_unite_leader = 'f'
 
 " theme settings
-let g:spacevim_colorscheme="desert"
+let g:spacevim_colorscheme="seoul256"
 
 let g:spacevim_guifont = 'DejaVu\ Sans\ Mono\ for\ Powerline\ 11'
 
