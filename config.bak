@@ -217,7 +217,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Set inner/outer gaps
 gaps inner 15
-gaps outer 15
+gaps outer 5
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
