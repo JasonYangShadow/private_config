@@ -79,6 +79,9 @@ bindsym $mod+Ctrl+h split h
 # split in vertical orientation
 bindsym $mod+Ctrl+v split v
 
+#bind rofi for window switcher
+bindsym $mod+Tab exec rofi -show run -terminal uxterm 
+
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 bindsym $mod+y fullscreen disable; floating enable;sticky enable;
