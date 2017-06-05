@@ -19,11 +19,12 @@ call SpaceVim#layers#load('lang#xml')
 call SpaceVim#layers#load('tools#screensaver')
 call SpaceVim#layers#load('shell')   
 "let g:spacevim_enable_vimfiler_welcome = 1
-let g:spacevim_enable_debug = 1
+"let g:spacevim_enable_debug = 1
 let g:deoplete#auto_complete_delay = 50
 let g:spacevim_enable_tabline_filetype_icon = 1
 let g:spacevim_enable_os_fileformat_icon = 1
 let g:spacevim_buffer_index_type = 1
+let g:spacevim_enable_ycm=1
 let g:neomake_vim_enabled_makers = ['vimlint', 'vint']
 if has('python3')
     let g:ctrlp_map = ''
@@ -73,7 +74,11 @@ let g:spacevim_custom_plugins = [
 \ ['plasticboy/vim-markdown', {'on_ft' : 'markdown'}],
 \ ['wsdjeg/GitHub.vim'],
 \ ['JamshedVesuna/vim-markdown-preview'],
+\ ['xuhdev/vim-latex-live-preview'],
 \ ]
+
+" vim latex live preview and add mupdf
+let g:livepreview_previewer = 'mupdf'
 
 "vim markdown settings
 let vim_markdown_preview_toggle=1
