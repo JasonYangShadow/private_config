@@ -1,5 +1,7 @@
 #!/bin/bash
 
+source ~/.extend.xinitrc
+
 InstCheck(){
  inst=`ps -ef|grep -v grep|grep $1|wc -l`
  if [ $inst -ge 1 ];then
