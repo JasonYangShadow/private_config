@@ -50,8 +50,8 @@ let g:spacevim_windows_leader = 's'
 " Set unite work flow shortcut leader [Unite], default is `f`
 let g:spacevim_unite_leader = 'f'
 
-" theme settings
-let g:spacevim_colorscheme="neodark"
+"theme settings
+let g:spacevim_colorscheme="anderson"
 
 let g:spacevim_guifont = 'DejaVu\ Sans\ Mono\ for\ Powerline\ 11'
 
