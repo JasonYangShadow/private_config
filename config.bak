@@ -199,7 +199,7 @@ exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id ~/.i3/monitor.sh
 
-assign [class=".*chrome.*"] 1
+assign [class="firefox-developer"] 1
 assign [class="Thunderbird"] 4
 assign [class="Slack"] 3
 
