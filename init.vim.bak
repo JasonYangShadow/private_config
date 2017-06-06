@@ -46,3 +46,8 @@ let g:spacevim_custom_plugins = [
 
 let g:spacevim_max_column=80
 let g:spacevim_enable_googlesuggest = 1
+
+"neomake configuration
+let g:neomake_cpp_enable_markers=['clang']
+let g:neomake_cpp_clang_args = ["-std=c++14", "-Wextra", "-Wall", "-fsanitize=undefined","-g"]
+
