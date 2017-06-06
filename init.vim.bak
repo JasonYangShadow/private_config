@@ -31,12 +31,15 @@ if has('python3')
 endif
 let g:clang2_placeholder_next = ''
 let g:clang2_placeholder_prev = ''
-let g:spacevim_default_indent = 3
-let g:spacevim_max_column     = 80
 
-"theme settings
-let g:spacevim_colorscheme="seoul256"
 
-map <F9> :mksession! ~/.vim_session <cr>
-map <F10> :source ~/.vim_session <cr> 
+" set SpaceVim colorscheme
+let g:spacevim_colorscheme = 'flatcolor'
+
+let g:spacevim_custom_plugins = [
+\ ['plasticboy/vim-markdown', {'on_ft' : 'markdown'}],
+\ ['wsdjeg/GitHub.vim'],
+\ ]
+
+
 
