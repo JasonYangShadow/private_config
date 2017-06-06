@@ -45,4 +45,7 @@ let g:spacevim_custom_plugins = [
 \ ]
 
 
+let g:spacevim_max_column=80
+let g:spacevim_enable_googlesuggest = 1
+
 
