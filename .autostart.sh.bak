@@ -21,10 +21,10 @@ if [ $? -ne 0 ];then
     nm-applet & 
 fi
 
-InstCheck blueman-applet 
-if [ $? -ne 0 ];then
-    blueman-applet & 
-fi
+#InstCheck blueman-applet 
+#if [ $? -ne 0 ];then
+#    blueman-applet & 
+#fi
 
 InstCheck slack 
 if [ $? -ne 0 ];then
@@ -36,10 +36,10 @@ if [ $? -ne 0 ];then
     thunderbird & 
 fi
 
-InstCheck xfce4-power-manager 
-if [ $? -ne 0 ];then
-    xfce4-power-manager & 
-fi
+#InstCheck xfce4-power-manager 
+#if [ $? -ne 0 ];then
+#    xfce4-power-manager & 
+#fi
 
 InstCheck pamac-tray 
 if [ $? -ne 0 ];then
