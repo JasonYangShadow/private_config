@@ -51,3 +51,5 @@ let g:spacevim_enable_googlesuggest = 1
 let g:neomake_cpp_enable_markers=['clang']
 let g:neomake_cpp_clang_args = ["-std=c++14", "-Wextra", "-Wall", "-fsanitize=undefined","-g"]
 
+"vimtex previewer pdf mupdf
+let g:vimtex_view_method='mupdf'
