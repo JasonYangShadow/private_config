@@ -200,8 +200,8 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id ~/.i3/monitor.sh
 
 assign [class=".*chrome.*"] 1
-assign [class="Thunderbird"] 4
-assign [class="Slack"] 3
+assign [class="Thunderbird"] 6
+assign [class="Slack"] 5
 
 #volume and screen light control
 #bindsym $mod+F12 exec amixer set Master 5%+
