@@ -60,3 +60,4 @@ let g:vimtex_view_method='mupdf'
 let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_github=1
 let vim_markdown_preview_use_xdg_open=1
+let vim_markdown_preview_browser='firefox-developer'
