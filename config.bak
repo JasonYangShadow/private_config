@@ -47,7 +47,6 @@ bindsym --release $mod+x exec --no-startup-id import /tmp/latest-screenshot.png
 #some default programs
 bindsym $mod+Shift+Ctrl+l exec blurlock
 bindsym $mod+Shift+Ctrl+f exec pcmanfm 
-bindsym $mod+Shift+Ctrl+p exec masterpdfeditor4
 
 # change focus
 bindsym $mod+j focus down
