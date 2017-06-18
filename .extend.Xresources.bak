@@ -1,29 +1,29 @@
-background: 
-*.foreground: 
-*.cursorColor: 
-URxvt.background: 
-URxvt*foreground: 
-URxvt*cursorColor: 
-URxvt.font: 
-*.color0: 
-*.color1: 
-*.color2: 
-*.color3: 
-*.color4:
-*.color5: 
-*.color6: 
-*.color7: 
-*.color8: 
-*.color9: 
-*.color10: 
-*.color11: 
-*.color12: 
-*.color13: 
-*.color14: 
-*.color15: 
-rofi.color-enabled: 
-rofi.color-window: 
-rofi.color-normal: 
-rofi.color-active: 
-rofi.color-urgent: 
-rofi.font: 
+*.background:	#1c1c22
+*.foreground:	#b0aba8
+*.cursorColor:  #b0aba8
+URxvt.background:	[100]#1c1c22
+URxvt*foreground: 		                #b0aba8
+URxvt*cursorColor:		                #b0aba8
+URxvt.font: xft:Hack:size=10
+*.color0:       #313131
+*.color1:       #7e6565
+*.color2:       #85aab6
+*.color3:       #90a996
+*.color4:       #3e646f
+*.color5:       #817f98
+*.color6:       #9aa7c0
+*.color7:       #b0aba8
+*.color8:       #434343
+*.color9:       #807171
+*.color10:      #3e646f
+*.color11:      #badbc2
+*.color12:      #5c828d
+*.color13:      #9b98b7
+*.color14:      #b2b7c0
+*.color15:      #d9d6ca
+rofi.color-enabled: true
+rofi.color-window: #1c1c22, #3e646f, #3e646f
+rofi.color-normal: #1c1c22, #bcbcbc, #1c1c22, #3e646f, #bcbcbc
+rofi.color-active: #1c1c22, #bcbcbc, #1c1c22, #3e646f, #bcbcbc
+rofi.color-urgent: #1c1c22, #bcbcbc, #1c1c22, #3e646f, #bcbcbc
+rofi.font: Hack Regular 12
