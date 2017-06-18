@@ -4,3 +4,4 @@ setw -g pane-base-index 1
 
 unbind C-b
 set-option -g prefix C-j 
+set -s escape-time 0
