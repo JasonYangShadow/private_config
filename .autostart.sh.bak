@@ -56,8 +56,8 @@ if [ $? -ne 0 ];then
     redshift -t 6500:4500 -l 35.4:139.4 &
 fi
 
-InstCheck firefox-developer 
+InstCheck chrome 
 if [ $? -ne 0 ];then
-    firefox-developer &
+    google-chrome-stable &
 fi
 
