@@ -209,11 +209,11 @@ bindsym $mod+r mode "resize"
 #    urgent_workspace #d33682 #d33682 #fdf6e3
 #  }
 #}
-client.focused         	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$background_i3wmthemer		$background_i3wmthemer
-client.focused_inactive	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$background_i3wmthemer		$background_i3wmthemer
-client.unfocused       	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$background_i3wmthemer		$background_i3wmthemer
-client.urgent		        $foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$background_i3wmthemer		$background_i3wmthemer
-client.placeholder	    $foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$background_i3wmthemer		$background_i3wmthemer
+client.focused         	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$foreground_i3wmthemer		$foreground_i3wmthemer
+client.focused_inactive	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color08_i3wmthemer		    $color08_i3wmthemer
+client.unfocused       	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color08_i3wmthemer		    $color08_i3wmthemer
+client.urgent		        $foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color08_i3wmthemer		    $color08_i3wmthemer
+client.placeholder	    $foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color08_i3wmthemer		    $color08_i3wmthemer
 client.background	$background_i3wmthemer
 
 
