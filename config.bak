@@ -15,7 +15,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:monospace 8
 
-new_window pixel 0
+new_window pixel 2
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -187,10 +187,10 @@ bar {
     urgent_workspace #d33682 #d33682 #fdf6e3
   }
 }
-client.focused #6c71c4 #6c71c4 #fdf6e3 #6c71c4
-client.focused_inactive #073642 #073642 #eee8d5 #6c71c4
-client.unfocused #073642 #073642 #93a1a1 #586e75
-client.urgent #d33682 #d33682 #fdf6e3 #dc322f
+client.focused         	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color02_i3wmthemer		$color02_i3wmthemer	
+client.focused_inactive	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color04_i3wmthemer		$color04_i3wmthemer
+client.unfocused       	$foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color04_i3wmthemer		$color04_i3wmthemer
+client.urgent		        $foreground_i3wmthemer	$background_i3wmthemer	$foreground_i3wmthemer	$color04_i3wmthemer		$color04_i3wmthemer
 
 #exec autostart script
 exec ~/.autostart.sh &
