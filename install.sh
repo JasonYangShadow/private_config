@@ -50,6 +50,8 @@ main(){
             ;;
         base_add )
             install "${BASE_ADD[*]}" "pacman"
+            echo "---------------------copy i3 exit file to /usr/bin/ folder-------------------"
+            cp ./i3exit /usr/bin/i3exit
             ;;
         software )
             install "${SOFTWARES[*]}" "yaourt"
