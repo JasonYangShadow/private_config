@@ -30,13 +30,14 @@ install_spacevim(){
 }
 
 main(){
-    while $1 != "" ; do
+    while [ "$1" != "" ]; do
         case $1 in 
             -t | --type )
                 shift
                 type=$1
                 ;;
             *)
+            echo "wrong input, please use -t"
             exit 0 
             ;;
         esac
@@ -73,10 +74,10 @@ main(){
             install_spacevim
             ;;
         * )
-            echo "type is one of {base base_add software config}"
+            echo "type is one of {base base_add software config spacevim}"
             exit 0;
             ;;
     esac
 }
 
-main "$@"
+main $@
