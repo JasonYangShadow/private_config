@@ -13,11 +13,11 @@ install(){
         if [ $COUNT -eq 0 ]; then
             if [ $2 = "pacman" ]; then
             echo "----------------------install $item--------------------------------"
-               pacman -S --noconfirm $item
+               pacman -Syu --noconfirm $item
             fi
             if [ $2 = "yaourt" ]; then
             echo "----------------------install $item--------------------------------"
-               yaourt -S --noconfirm $item
+               yaourt -Syu --noconfirm $item
             fi
         fi
     done
