@@ -68,6 +68,12 @@ main(){
             cp ./.cronjob.sh.bak ~/.cronjob.sh
             cp ./.tmux.conf.bak ~/.tmux.conf
             cp ./.Xresources.bak ~/.Xresources
+            
+            echo "---------------------copy customized fons--------------------------------------"
+            mkdir -p ~/.local/share/fonts
+            cp ./fonts/* ~/.local/share/fonts 
+            fc-cache ~/.local/share/fonts
+
             ;;
         spacevim )
             echo "--------------------install spacevim---------------------------------"
