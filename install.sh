@@ -1,7 +1,7 @@
 #!/bin/bash
 
 INSTALLED_PACKAGE=/tmp/installed_package
-BASE=(yaourt xorg xorg-xinit arandr sysstat lm_sensors pamac git gcc gdb neovim zsh tmux python3 python-pip i3-gaps i3exit lightdm pulseaudio networkmanager network-manager-applet bluez blueman xfce4-terminal rofi xarchiver unrar lxappearance nitrogen ranger pcmanfm gparted htop) 
+BASE=(yaourt xorg xorg-xinit arandr sysstat lm_sensors acpi acpid pamac git gcc gdb neovim zsh tmux python3 python-pip i3-gaps i3exit lightdm pulseaudio networkmanager network-manager-applet bluez blueman xfce4-terminal rofi xarchiver unrar lxappearance nitrogen ranger pcmanfm gparted htop) 
 BASE_ADD=(unclutter redshift vlc-nightly cmake viewnior mupdf markdown zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps ibus ibus-kkc ibus-pinyin xfce4-power-manager texlive-most inkscape isousb hexchat)
 SOFTWARES=(powerline-fonts-git oh-my-zsh-git google-chrome-stable thunderbird slack-desktop xfce4-terminal-base16-colors-git uget tor-browser filezilla xmind visual-paradigm-community wps-office ttf-wps-fonts ttf-ms-fonts paper-icon-theme)
 pacman -Qe > $INSTALLED_PACKAGE 
@@ -29,6 +29,13 @@ install_spacevim(){
     cp ./init.vim.bak ~/.SpaceVim.d/init.vim
 }
 
+check_root(){
+    if [ "$EUID" -ne 0 ]; then
+        echo "please run as root"
+        exit 0
+    fi
+}
+
 main(){
     while [ "$1" != "" ]; do
         case $1 in 
@@ -46,11 +53,13 @@ main(){
     
     case "$type" in
         base )
+            check_root    
             install "${BASE[*]}" "pacman"
             ;;
         base_add )
+            check_root    
             install "${BASE_ADD[*]}" "pacman"
-            echo "---------------------copy i3 exit file to /usr/bin/ folder-------------------"
+            echo "---------------------copy i3exit and blurlock to /usr/bin/ -------------------"
             cp ./i3exit /usr/bin/i3exit
             cp ./.blur_lock.sh.bak /usr/bin/blurlock
             ;;
