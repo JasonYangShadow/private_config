@@ -23,30 +23,60 @@ install(){
     done
     }
 
-install "${BASE[*]}" "pacman"
+install_spacevim(){
+    echo "----------------------git clone spacevim--------------------------------------"
+    curl -sLf https://spacevim.org/install.sh | bash
+    cp ./init.vim.bak ~/.SpaceVim.d/init.vim
+}
 
-echo "----------------------copy configuraiton files--------------------------------------"
-mkdir -p ~/.i3
-cp ./config.bak ~/.i3/config
-cp ./i3blocks.conf.bak ~/.i3/i3blocks.conf
-cp ./battery.py.bak ~/.i3/battery.py
-cp ./monitor.sh.bak ~/.i3/monitor.sh
-cp ./.xinitrc.bak ~/.xinitrc
-cp ./.extend.xinitrc.bak ~/.extend.xinitrc
-cp ./.autostart.sh.bak ~/.autostart.sh
-cp ./.blur_lock.sh.bak ~/.blur_lock.sh
-cp ./.cronjob.sh.bak ~/.cronjob.sh
-cp ./.tmux.conf.bak ~/.tmux.conf
-cp ./.Xresources.bak ~/.Xresources
+main(){
+    while $1 != "" ; do
+        case $1 in 
+            -t | --type )
+                shift
+                type=$1
+                ;;
+            *)
+            exit 0 
+            ;;
+        esac
+        shift
+    done
+    
+    case "$type" in
+        base )
+            install "${BASE[*]}" "pacman"
+            ;;
+        base_add )
+            install "${BASE_ADD[*]}" "pacman"
+            ;;
+        software )
+            install "${SOFTWARES[*]}" "yaourt"
+            ;;
+        config )
+            echo "--------------------copy configuraiton files---------------------------------"
+            mkdir -p ~/.i3
+            cp ./config.bak ~/.i3/config
+            cp ./i3blocks.conf.bak ~/.i3/i3blocks.conf
+            cp ./battery.py.bak ~/.i3/battery.py
+            cp ./monitor.sh.bak ~/.i3/monitor.sh
+            cp ./.xinitrc.bak ~/.xinitrc
+            cp ./.extend.xinitrc.bak ~/.extend.xinitrc
+            cp ./.autostart.sh.bak ~/.autostart.sh
+            cp ./.blur_lock.sh.bak ~/.blur_lock.sh
+            cp ./.cronjob.sh.bak ~/.cronjob.sh
+            cp ./.tmux.conf.bak ~/.tmux.conf
+            cp ./.Xresources.bak ~/.Xresources
+            ;;
+        spacevim )
+            echo "--------------------install spacevim---------------------------------"
+            install_spacevim
+            ;;
+        * )
+            echo "type is one of {base base_add software config}"
+            exit 0;
+            ;;
+    esac
+}
 
-
-install "${BASE_ADD[*]}" "pacman"
-
-install "${SOFTWARES[*]}" "yaourt"
-
-echo "----------------------git clone spacevim--------------------------------------"
-curl -sLf https://spacevim.org/install.sh | bash
-
-cp ./init.vim.bak ~/.SpaceVim.d/init.vim
-
-
+main "$@"
