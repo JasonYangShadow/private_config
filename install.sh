@@ -1,7 +1,7 @@
 #!/bin/bash
 
 INSTALLED_PACKAGE=/tmp/installed_package
-BASE=(yaourt xorg xorg-xinit arandr sysstat lm_sensors acpi acpid pamac git gcc automake make autoconf gdb fakeroot neovim zsh tmux python3 python-pip lightdm pulseaudio networkmanager network-manager-applet dhclient bluez blueman xfce4-terminal rofi xarchiver unrar lxappearance nitrogen ranger pcmanfm gparted htop gvfs exfat-utils xdotool xdgutils dmraid dmidecode dosfstools iptables ipw2100-fw ipw2200-fw linux-firmware nfs-3g nfs-utils gnome-keyring polkit-gnome) 
+BASE=(yaourt xorg xorg-xinit arandr sysstat lm_sensors acpi acpid pamac git gcc automake make autoconf gdb fakeroot neovim zsh tmux python3 python-pip lightdm pulseaudio networkmanager network-manager-applet dhclient bluez blueman xfce4-terminal rofi xarchiver unrar lxappearance nitrogen ranger pcmanfm gparted htop gvfs exfat-utils xdotool xdgutils dmraid dmidecode dosfstools iptables ipw2100-fw ipw2200-fw linux-firmware nfs-3g nfs-utils gnome-keyring polkit-gnome pkgconf) 
 BASE_ADD=(unclutter redshift vlc-nightly cmake viewnior mupdf markdown zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps ibus ibus-kkc ibus-pinyin xfce4-power-manager texlive-most inkscape isousb hexchat)
 SOFTWARES=(i3-gaps update-grub powerline-fonts-git oh-my-zsh-git google-chrome thunderbird slack-desktop xfce4-terminal-base16-colors-git uget tor-browser filezilla xmind visual-paradigm-community wps-office ttf-wps-fonts ttf-ms-fonts paper-icon-theme boost gtest ctags boost)
 pacman -Qe|awk 'BEGIN{FS=" "};{print $1}' > $INSTALLED_PACKAGE 
@@ -31,8 +31,9 @@ install_spacevim(){
 
 check_root(){
     if [ "$EUID" -ne 0 ]; then
-        echo "please run as root"
-        exit 0
+        return -1
+    else
+        return 0
     fi
 }
 
@@ -53,20 +54,39 @@ main(){
     
     case "$type" in
         base )
-            check_root    
-            install "${BASE[*]}" "pacman"
+            root=check_root    
+            if [ $root -ne 0 ]; then
+                echo "please execute this script using root"
+            else
+                install "${BASE[*]}" "pacman"
+            fi
             ;;
         base_add )
-            check_root    
-            install "${BASE_ADD[*]}" "pacman"
+            root=check_root    
+            if [ $root -ne 0 ]; then
+                echo "please execute this script using root"
+            else
+                install "${BASE_ADD[*]}" "pacman"
+            fi
             echo "---------------------copy i3exit and blurlock to /usr/bin/ -------------------"
             cp ./i3exit /usr/bin/i3exit
             cp ./.blur_lock.sh.bak /usr/bin/blurlock
             ;;
         software )
-            install "${SOFTWARES[*]}" "yaourt"
+            root=check_root    
+            if [ $root -eq 0 ]; then
+                echo "please execute this script using common user, not root"
+            else
+                install "${SOFTWARES[*]}" "yaourt"
+            fi
             ;;
         config )
+            root=check_root    
+            if [ $root -eq 0 ]; then
+                echo "please execute this script using common user, not root"
+                exit -1
+            fi
+
             echo "--------------------copy configuraiton files---------------------------------"
             mkdir -p ~/.i3
             cp ./config.bak ~/.i3/config
@@ -87,6 +107,12 @@ main(){
 
             ;;
         spacevim )
+            root=check_root    
+            if [ $root -eq 0 ]; then
+                echo "please execute this script using common user, not root"
+                exit -1
+            fi
+
             echo "--------------------install spacevim---------------------------------"
             install_spacevim
             ;;
