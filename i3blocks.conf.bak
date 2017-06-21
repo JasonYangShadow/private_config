@@ -13,10 +13,10 @@ command=/usr/lib/i3blocks/disk /
 interval=30
 color=#1793D1
 
-[network]
+[ethernet]
 label=
 instance=enp0s25
-command=/usr/lib/i3blcoks/iface
+command=/usr/lib/i3blocks/iface
 color=#00FF00
 interval=10
 
