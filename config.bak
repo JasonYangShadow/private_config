@@ -38,9 +38,6 @@ bindsym $mod+Return exec xfce4-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
-bindsym $mod+z exec morc_menu 
-bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 # Take a screenshot upon pressing $mod+x (select an area)
 bindsym --release $mod+x exec --no-startup-id import /tmp/latest-screenshot.png
 
@@ -83,7 +80,7 @@ bindsym $mod+Tab exec rofi -show run -terminal uxterm
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-bindsym $mod+y fullscreen disable; floating enable;sticky enable;
+bindsym $mod+y floating enable
 
 #automatically rearrange the monitor outputs
 bindsym $mod+Shift+Ctrl+m exec --no-startup-id ~/.i3/monitor.sh 
@@ -103,7 +100,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+d focus child
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -141,7 +138,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 #hibernate suspend and etc
-bindsym $mod+Ctrl+Shift+h exec --no-startup-id i3exit hibernate, mode "default"
+#bindsym $mod+Ctrl+Shift+h exec --no-startup-id i3exit hibernate, mode "default"
 bindsym $mod+Ctrl+Shift+s exec --no-startup-id i3exit suspend, mode "default"
 bindsym $mod+Ctrl+Shift+r exec --no-startup-id i3exit reboot, mode "default"
 
