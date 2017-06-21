@@ -1,15 +1,15 @@
 #!/bin/bash
 
 INSTALLED_PACKAGE=/tmp/installed_package
-BASE=(yaourt xorg xorg-xinit arandr sysstat lm_sensors acpi acpid pamac git gcc automake make autoconf gdb fakeroot neovim zsh tmux python3 python-pip lightdm pulseaudio networkmanager network-manager-applet bluez blueman xfce4-terminal rofi xarchiver unrar lxappearance nitrogen ranger pcmanfm gparted htop) 
+BASE=(yaourt xorg xorg-xinit arandr sysstat lm_sensors acpi acpid pamac git gcc automake make autoconf gdb fakeroot neovim zsh tmux python3 python-pip lightdm pulseaudio networkmanager network-manager-applet dhclient bluez blueman xfce4-terminal rofi xarchiver unrar lxappearance nitrogen ranger pcmanfm gparted htop gvfs exfat-utils xdotool xdgutils dmraid dmidecode dosfstools iptables ipw2100-fw ipw2200-fw linux-firmware nfs-3g nfs-utils gnome-keyring polkit-gnome) 
 BASE_ADD=(unclutter redshift vlc-nightly cmake viewnior mupdf markdown zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps ibus ibus-kkc ibus-pinyin xfce4-power-manager texlive-most inkscape isousb hexchat)
-SOFTWARES=(i3-gaps powerline-fonts-git oh-my-zsh-git google-chrome-stable thunderbird slack-desktop xfce4-terminal-base16-colors-git uget tor-browser filezilla xmind visual-paradigm-community wps-office ttf-wps-fonts ttf-ms-fonts paper-icon-theme)
-pacman -Qe > $INSTALLED_PACKAGE 
+SOFTWARES=(i3-gaps update-grub powerline-fonts-git oh-my-zsh-git google-chrome thunderbird slack-desktop xfce4-terminal-base16-colors-git uget tor-browser filezilla xmind visual-paradigm-community wps-office ttf-wps-fonts ttf-ms-fonts paper-icon-theme boost gtest ctags boost)
+pacman -Qe|awk 'BEGIN{FS=" "};{print $1}' > $INSTALLED_PACKAGE 
 
 install(){
     paras=("$1")
     for item in $paras ; do
-        COUNT=`grep -o $item $INSTALLED_PACKAGE |wc -l`
+        COUNT=`grep -w $item $INSTALLED_PACKAGE |wc -l`
         if [ $COUNT -eq 0 ]; then
             if [ $2 = "pacman" ]; then
             echo "----------------------install $item--------------------------------"
@@ -97,4 +97,4 @@ main(){
     esac
 }
 
-main $@
+main $@ | tee -a "/tmp/installment.log" 
