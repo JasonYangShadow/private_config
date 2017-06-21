@@ -80,7 +80,6 @@ bindsym $mod+Tab exec rofi -show run -terminal uxterm
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
-bindsym $mod+y floating enable
 
 #automatically rearrange the monitor outputs
 bindsym $mod+Shift+Ctrl+m exec --no-startup-id ~/.i3/monitor.sh 
