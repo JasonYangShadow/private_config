@@ -8,7 +8,7 @@ separator=true
 interval=30
 
 [disk-root]
-label=:
+label=
 command=/usr/lib/i3blocks/disk /
 interval=30
 color=#1793D1
