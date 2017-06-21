@@ -41,11 +41,6 @@ if [ $? -ne 0 ];then
     xfce4-power-manager & 
 fi
 
-InstCheck pamac-tray 
-if [ $? -ne 0 ];then
-    pamac-tray & 
-fi
-
 InstCheck unclutter
 if [ $? -ne 0 ];then
     unclutter -idle 2 &
@@ -56,8 +51,8 @@ if [ $? -ne 0 ];then
     redshift -t 6500:4500 -l 35.4:139.4 &
 fi
 
-InstCheck chrome 
+InstCheck chromium   
 if [ $? -ne 0 ];then
-    google-chrome-stable &
+    chromium &
 fi
 
