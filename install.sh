@@ -1,9 +1,9 @@
 #!/bin/bash
 
 INSTALLED_PACKAGE=/tmp/installed_package
-BASE=(yaourt xorg xorg-xinit arandr sysstat lm_sensors acpi acpid pamac git gcc automake make autoconf gdb fakeroot neovim zsh tmux python3 python-pip lightdm pulseaudio networkmanager network-manager-applet dhclient bluez blueman xfce4-terminal rofi xarchiver unrar lxappearance nitrogen ranger pcmanfm gparted htop gvfs exfat-utils xdotool xdgutils dmraid dmidecode dosfstools iptables ipw2100-fw ipw2200-fw linux-firmware nfs-3g nfs-utils gnome-keyring polkit-gnome pkgconf) 
-BASE_ADD=(unclutter redshift vlc-nightly cmake viewnior mupdf markdown zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps ibus ibus-kkc ibus-pinyin xfce4-power-manager texlive-most inkscape isousb hexchat)
-SOFTWARES=(i3-gaps update-grub powerline-fonts-git oh-my-zsh-git google-chrome thunderbird slack-desktop xfce4-terminal-base16-colors-git uget tor-browser filezilla xmind visual-paradigm-community wps-office ttf-wps-fonts ttf-ms-fonts paper-icon-theme boost gtest ctags boost)
+BASE=(xorg xorg-xinit arandr sysstat lm_sensors acpi acpid pamac git gcc automake make autoconf gdb fakeroot neovim zsh tmux python3 python-pip lightdm pulseaudio networkmanager network-manager-applet dhclient bluez blueman xfce4-terminal rofi xarchiver unrar lxappearance nitrogen ranger pcmanfm gparted htop gvfs exfat-utils xdotool xdgutils dmraid dmidecode dosfstools iptables ipw2100-fw ipw2200-fw linux-firmware nfs-3g nfs-utils gnome-keyring polkit-gnome pkgconf) 
+BASE_ADD=(unclutter redshift vlc cmake viewnior mupdf markdown zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps ibus ibus-kkc ibus-pinyin xfce4-power-manager texlive-most inkscape isousb hexchat cronie)
+SOFTWARES=(i3-gaps i3-scrot update-grub powerline-fonts-git oh-my-zsh-git chromium thunderbird slack-desktop xfce4-terminal-base16-colors-git uget tor-browser filezilla xmind visual-paradigm-community wps-office ttf-wps-fonts ttf-ms-fonts paper-icon-theme boost gtest ctags boost)
 pacman -Qe|awk 'BEGIN{FS=" "};{print $1}' > $INSTALLED_PACKAGE 
 
 install(){
@@ -13,11 +13,11 @@ install(){
         if [ $COUNT -eq 0 ]; then
             if [ $2 = "pacman" ]; then
             echo "----------------------install $item--------------------------------"
-               pacman -Syu --noconfirm $item
+               pacman -Su --noconfirm $item
             fi
             if [ $2 = "yaourt" ]; then
             echo "----------------------install $item--------------------------------"
-               yaourt -Syu --noconfirm $item
+               yaourt -Su --noconfirm $item
             fi
         fi
     done
@@ -74,8 +74,8 @@ main(){
             ;;
         software )
             root=check_root    
-            if [ $root -eq 0 ]; then
-                echo "please execute this script using common user, not root"
+            if [ $root -ne 0 ]; then
+                echo "please execute this script using root"
             else
                 install "${SOFTWARES[*]}" "yaourt"
             fi
@@ -99,6 +99,7 @@ main(){
             cp ./.cronjob.sh.bak ~/.cronjob.sh
             cp ./.tmux.conf.bak ~/.tmux.conf
             cp ./.Xresources.bak ~/.Xresources
+            cp ./.zshrc.bak ~/.zshrc
             
             echo "---------------------copy customized fons--------------------------------------"
             mkdir -p ~/.local/share/fonts
