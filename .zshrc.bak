@@ -90,6 +90,9 @@ source $ZSH/oh-my-zsh.sh
 alias v='nvim'
 alias vim='nvim'
 alias top='htop'
+alias yi='yaourt --noconfirm -Sy'
+alias ys='yaourt -Ss'
+alias yu='yaourt -Syu --aur'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
