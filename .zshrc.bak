@@ -94,6 +94,7 @@ alias yi='yaourt --noconfirm -Sy'
 alias ys='yaourt -Ss'
 alias yu='yaourt -Syu --aur'
 alias yc="sudo rm -r /var/cache/pacman/pkg/*.xz"
+alias yr='yaourt -R'
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
