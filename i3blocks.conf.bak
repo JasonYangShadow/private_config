@@ -6,18 +6,19 @@ label=
 command=/usr/lib/i3blocks/memory
 separator=true
 interval=30
+color=#f4dc41
 
 [disk-root]
 label=
 command=/usr/lib/i3blocks/disk /
 interval=30
-color=#1793D1
+color=#ff7628
 
 [ethernet]
 label=
 instance=enp0s25
 command=/usr/lib/i3blocks/iface
-color=#00FF00
+color=#00a878
 interval=10
 
 [wireless]
@@ -26,6 +27,12 @@ instance=wlp2s0
 command=/usr/lib/i3blocks/iface
 color=#00FF00
 interval=10
+
+[bandwidth]
+command=~/.i3/bandwidth
+interval=persist
+markup=pango
+color=#9542f4
 
 [temp]
 label=
@@ -40,6 +47,7 @@ command=/usr/lib/i3blocks/cpu_usage
 interval=10
 min_width=100.00%
 separator=true
+color=#ff28ff
 
 #[load]
 #label= 
@@ -52,18 +60,17 @@ label=
 command=/usr/lib/i3blocks/volume
 interval=2
 signal=10
-color=#d70a53
+color=#41f4e8
+
+[battery]
+label=
+command=python3 ~/.i3/battery.py
+markup=pango
+interval=10
+color=#dd0033
 
 [time]
 label=
 command=date '+%a %m-%d-%y %k:%M'
 interval=5
-color=#50C878
-
-[battery]
-label=
-command=python3 /home/jason/.i3/battery.py
-markup=pango
-interval=10
-
-
+color=#287aff
