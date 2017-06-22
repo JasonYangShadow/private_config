@@ -102,6 +102,7 @@ main(){
             cp ./.zshrc.bak ~/.zshrc
             cp ./.tmux.conf.bak ~/.tmux.conf
             cp ./.tmux.conf.local.bak ~/.tmux.conf.local
+            cp ./.bandwidth.bak ~/.i3/bandwidth
             
             echo "---------------------copy customized fons--------------------------------------"
             mkdir -p ~/.local/share/fonts
