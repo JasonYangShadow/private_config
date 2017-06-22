@@ -170,8 +170,13 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 bar {
+  position top
   font pango:Source Sans Pro-10 10
   status_command i3blocks -c ~/.i3/i3blocks.conf
+  mode hide
+  hidden_state hide
+  output LVDS1
+  tray_output primary
   colors {
     separator #268bd2
     background #333333
@@ -222,8 +227,8 @@ bindsym XF86AudioPrev exec playerctl previous
 #for_window [class="^.*"] border pixel 2
 
 # Set inner/outer gaps
-gaps inner 10
-gaps outer 5
+gaps inner 10 
+gaps outer 5 
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
