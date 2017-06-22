@@ -7,7 +7,7 @@
 
 iface="${BLOCK_INSTANCE}"
 dt=3
-unit=Kb
+unit=KB
 label="<span font='FontAwesome'>  </span>" # down arrow up arrow
 printf_command="printf \"${label}%-5.1f/%5.1f %s/s\n\", rx, wx, unit;"
 
@@ -62,18 +62,18 @@ while [ -z "$iface" ]; do
 done
 
 case "$unit" in
-    Kb|Kbit|Kbits)   bytes_per_unit=$((1024 / 8));;
-    KB|KByte|KBytes) bytes_per_unit=$((1024));;
-    Mb|Mbit|Mbits)   bytes_per_unit=$((1024 * 1024 / 8));;
-    MB|MByte|MBytes) bytes_per_unit=$((1024 * 1024));;
-    Gb|Gbit|Gbits)   bytes_per_unit=$((1024 * 1024 * 1024 / 8));;
-    GB|GByte|GBytes) bytes_per_unit=$((1024 * 1024 * 1024));;
-    Tb|Tbit|Tbits)   bytes_per_unit=$((1024 * 1024 * 1024 * 1024 / 8));;
-    TB|TByte|TBytes) bytes_per_unit=$((1024 * 1024 * 1024 * 1024));;
+    Kb|Kbit|Kbits)   bytes_per_unit=$((1024));;
+    KB|KByte|KBytes) bytes_per_unit=$((1024 / 8));;
+    Mb|Mbit|Mbits)   bytes_per_unit=$((1024 * 1024));;
+    MB|MByte|MBytes) bytes_per_unit=$((1024 * 1024 / 8));;
+    Gb|Gbit|Gbits)   bytes_per_unit=$((1024 * 1024 * 1024));;
+    GB|GByte|GBytes) bytes_per_unit=$((1024 * 1024 * 1024 / 8));;
+    Tb|Tbit|Tbits)   bytes_per_unit=$((1024 * 1024 * 1024 * 1024));;
+    TB|TByte|TBytes) bytes_per_unit=$((1024 * 1024 * 1024 * 1024 / 8));;
     *) echo Bad unit "$unit" && exit 1;;
 esac
 
-scalar=$((bytes_per_unit * dt))
+scalar=$((bytes_per_unit * dt * 10 ))
 init_line=$(cat /proc/net/dev | grep "^[ ]*$iface:")
 if [ -z "$init_line" ]; then
     echo Interface not found in /proc/net/dev: "$iface"
