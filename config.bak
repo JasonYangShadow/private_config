@@ -203,7 +203,6 @@ exec ~/.autostart.sh &
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 
 assign [class="Thunderbird"] 6
-assign [class="Slack"] 5
 
 #volume and screen light control
 #bindsym $mod+F12 exec amixer set Master 5%+
@@ -303,6 +302,7 @@ for_window [class="Thus"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
+for_window [class="slack"] move scratchpad 
 
 # end
 # editor by jason @2017 
