@@ -11,11 +11,6 @@ InstCheck(){
  fi
 }
 
-InstCheck ibus-daemon
-if [ $? -ne 0 ];then
-    ibus-daemon & 
-fi
-
 InstCheck nm-applet 
 if [ $? -ne 0 ];then
     nm-applet & 
