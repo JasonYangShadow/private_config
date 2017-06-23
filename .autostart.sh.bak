@@ -58,8 +58,13 @@ if [ $? -ne 0 ];then
     redshift -t 6500:4500 -l 35.4:139.4 &
 fi
 
-InstCheck chromium   
+#InstCheck chromium   
+#if [ $? -ne 0 ];then
+#    chromium &
+#fi
+
+InstCheck firefox 
 if [ $? -ne 0 ];then
-    chromium &
+    firefox &
 fi
 
