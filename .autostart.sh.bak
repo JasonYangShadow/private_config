@@ -31,6 +31,13 @@ if [ $? -ne 0 ];then
     slack & 
 fi
 
+InstCheck hexchat 
+if [ $? -ne 0 ];then
+    hexchat --minimize=2 & 
+fi
+
+
+
 InstCheck thunderbird 
 if [ $? -ne 0 ];then
     thunderbird & 
