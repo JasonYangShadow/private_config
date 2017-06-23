@@ -90,8 +90,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 #workspace default settings
-default_orientation vertical
-workspace_layout tabbed
+workspace_layout stacking 
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
