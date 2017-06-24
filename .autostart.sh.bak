@@ -36,7 +36,10 @@ fi
 #    hexchat --minimize=2 & 
 #fi
 
-
+InstCheck telegram-desktop 
+if [ $? -ne 0 ];then
+    telegram-desktop & 
+fi
 
 InstCheck thunderbird 
 if [ $? -ne 0 ];then
