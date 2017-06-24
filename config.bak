@@ -182,8 +182,7 @@ bar {
   position top
   font pango:Source Sans Pro-10 10
   status_command i3blocks -c ~/.i3/i3blocks.conf
-#mode hide
-#hidden_state hide
+  mode hide
   tray_output primary
   colors {
     separator #268bd2
