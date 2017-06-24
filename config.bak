@@ -92,6 +92,12 @@ bindsym $mod+e layout toggle split
 #workspace default settings
 workspace_layout stacking 
 
+#automatically switching workspace
+workspace_auto_back_and_forth yes
+
+#focus on window activation
+focus_on_window_activation focus
+
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
@@ -204,8 +210,8 @@ exec --no-startup-id ~/.i3/monitor.sh
 exec ~/.autostart.sh &
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 
-assign [class="Thunderbird"] 6
-assign [class="Slack"] 5
+assign [class="Thunderbird"] 2
+assign [class="Slack"] 2
 
 #volume and screen light control
 #bindsym $mod+F12 exec amixer set Master 5%+
