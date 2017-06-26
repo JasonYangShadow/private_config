@@ -21,7 +21,7 @@ install(){
             fi
         fi
     done
-    }
+}
 
 install_i3(){
     echo "----------------------install i3-gaps--------------------------------------"
@@ -121,12 +121,12 @@ main(){
             cp ./.tmux.conf.bak ~/.tmux.conf
             cp ./.tmux.conf.local.bak ~/.tmux.conf.local
             cp ./.bandwidth.bak ~/.i3/bandwidth
+            cp ./.zprofile.bak ~/.zprofile
             
             echo "---------------------copy customized fons--------------------------------------"
             mkdir -p ~/.local/share/fonts
             cp ./fonts/* ~/.local/share/fonts 
             fc-cache ~/.local/share/fonts
-
             ;;
         spacevim )
             root=check_root    
