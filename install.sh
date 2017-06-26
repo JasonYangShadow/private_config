@@ -1,9 +1,9 @@
 #!/bin/bash
 
 INSTALLED_PACKAGE=/tmp/installed_package
-BASE=(xorg xorg-xinit arandr sysstat lm_sensors acpi acpid pamac git gdb base-devel neovim zsh tmux python3 python-pip lightdm pulseaudio networkmanager network-manager-applet dhclient bluez blueman xfce4-terminal rofi xarchiver unrar lxappearance nitrogen ranger pcmanfm gparted htop gvfs exfat-utils xdotool xdgutils dmraid dmidecode dosfstools iptables ipw2100-fw ipw2200-fw aic94xx-firmware wd719x-firmware linux-firmware nfs-3g nfs-utils gnome-keyring polkit-gnome tmux) 
+BASE=(arandr sysstat lm_sensors acpi acpid pamac git gdb base-devel neovim zsh tmux python3 python-pip pulseaudio networkmanager network-manager-applet dhclient bluez blueman xfce4-terminal rofi xarchiver unrar lxappearance nitrogen ranger pcmanfm gparted htop gvfs exfat-utils xdotool xdgutils dmraid dmidecode dosfstools iptables ipw2100-fw ipw2200-fw aic94xx-firmware wd719x-firmware linux-firmware nfs-3g nfs-utils gnome-keyring polkit-gnome tmux) 
 BASE_ADD=(unclutter redshift vlc cmake viewnior mupdf markdown zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps ibus ibus-kkc ibus-pinyin xfce4-power-manager texlive-most inkscape isousb hexchat cronie clang)
-SOFTWARES=(i3-gaps i3-scrot update-grub powerline-fonts-git oh-my-zsh-git firefox thunderbird slack-desktop xfce4-terminal-base16-colors-git uget tor-browser filezilla xmind visual-paradigm-community wps-office ttf-wps-fonts ttf-ms-fonts paper-icon-theme boost gtest ctags boost)
+SOFTWARES=(firefox thunderbird slack-desktop xfce4-terminal-base16-colors-git uget tor-browser filezilla xmind visual-paradigm-community wps-office ttf-wps-fonts ttf-ms-fonts paper-icon-theme boost gtest ctags telegram-desktop-bin)
 pacman -Qe|awk 'BEGIN{FS=" "};{print $1}' > $INSTALLED_PACKAGE 
 
 install(){
@@ -23,10 +23,20 @@ install(){
     done
     }
 
+install_i3(){
+    echo "----------------------install i3-gaps--------------------------------------"
+    yaourt -S i3-gaps i3-scrot update-grub powerline-fonts-git
+}
+
 install_spacevim(){
     echo "----------------------git clone spacevim--------------------------------------"
     curl -sLf https://spacevim.org/install.sh | bash
     cp ./init.vim.bak ~/.SpaceVim.d/init.vim
+}
+
+install_ohmyzsh(){
+    echo "----------------------git clone oh my sh--------------------------------------"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 }
 
 check_root(){
@@ -80,6 +90,14 @@ main(){
                 install "${SOFTWARES[*]}" "yaourt"
             fi
             ;;
+        i3 )
+            root=check_root    
+            if [ $root -ne 0 ]; then
+                echo "please execute this script using root"
+            else
+                install_i3 
+            fi
+            ;;
         config )
             root=check_root    
             if [ $root -eq 0 ]; then
@@ -120,8 +138,17 @@ main(){
             echo "--------------------install spacevim---------------------------------"
             install_spacevim
             ;;
+        ohmyzsh )
+            root=check_root
+            if [ $root -eq 0];then
+                echo "please execute this script using common user, not root"
+                exit -1
+            fi
+            echo "--------------------install ohmyzsh---------------------------------"
+            install_ohmyzsh
+            ;;
         * )
-            echo "type is one of {base base_add software config spacevim}"
+            echo "type is one of {base base_add software config spacevim ohmyzsh i3}"
             exit 0;
             ;;
     esac
