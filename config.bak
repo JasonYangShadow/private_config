@@ -189,6 +189,9 @@ bar {
   font pango:Source Sans Pro-10 10
   status_command i3blocks -c ~/.i3/i3blocks.conf
   tray_output primary
+  mode hide
+  hidden_state hide
+  modifier Mod1
   colors {
     separator #268bd2
     background #333333
