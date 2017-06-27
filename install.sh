@@ -41,7 +41,7 @@ install_ohmyzsh(){
 
 check_root(){
     if [ "$EUID" -ne 0 ]; then
-        return -1
+        return 1
     else
         return 0
     fi
