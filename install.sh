@@ -3,7 +3,7 @@
 INSTALLED_PACKAGE=/tmp/installed_package
 BASE=(arandr sysstat lm_sensors acpi acpid pamac git gdb base-devel neovim zsh tmux python3 python-pip pulseaudio networkmanager network-manager-applet dhclient bluez blueman xfce4-terminal rofi xarchiver unrar lxappearance nitrogen ranger pcmanfm gparted htop gvfs exfat-utils xdotool xdgutils dmraid dmidecode dosfstools iptables ipw2100-fw ipw2200-fw aic94xx-firmware wd719x-firmware linux-firmware nfs-3g nfs-utils gnome-keyring polkit-gnome tmux rfkill) 
 BASE_ADD=(unclutter redshift vlc cmake viewnior mupdf markdown zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps ibus ibus-kkc ibus-pinyin xfce4-power-manager texlive-most inkscape isousb hexchat cronie clang)
-SOFTWARES=(firefox thunderbird slack-desktop xfce4-terminal-base16-colors-git uget tor-browser filezilla xmind visual-paradigm-community wps-office ttf-wps-fonts ttf-ms-fonts paper-icon-theme boost gtest ctags telegram-desktop-bin latex-beamer nodejs npm nodejs-hexo-cli)
+SOFTWARES=(firefox thunderbird slack-desktop xfce4-terminal-base16-colors-git uget tor-browser filezilla xmind visual-paradigm-community wps-office ttf-wps-fonts ttf-ms-fonts paper-icon-theme boost gtest ctags telegram-desktop-bin latex-beamer nodejs npm nodejs-hexo-cli neofetch)
 pacman -Qe|awk 'BEGIN{FS=" "};{print $1}' > $INSTALLED_PACKAGE 
 
 install(){
