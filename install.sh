@@ -1,9 +1,9 @@
 #!/bin/bash
 
 INSTALLED_PACKAGE=/tmp/installed_package
-BASE=(arandr sysstat lm_sensors acpi acpid pamac git gdb base-devel neovim zsh tmux python3 python-pip pulseaudio networkmanager network-manager-applet dhclient bluez blueman xfce4-terminal rofi xarchiver unrar lxappearance lxinput nitrogen ranger pcmanfm gparted htop gvfs exfat-utils xdotool xdgutils dmraid dmidecode dosfstools iptables ipw2100-fw ipw2200-fw aic94xx-firmware wd719x-firmware linux-firmware nfs-3g nfs-utils gnome-keyring polkit-gnome tmux rfkill) 
-BASE_ADD=(unclutter redshift vlc cmake viewnior mupdf markdown zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps ibus ibus-kkc ibus-pinyin xfce4-power-manager texlive-most inkscape isousb cronie clang)
-SOFTWARES=(firefox thunderbird slack-desktop xfce4-terminal-base16-colors-git uget tor-browser filezilla xmind visual-paradigm-community wps-office ttf-wps-fonts ttf-ms-fonts paper-icon-theme boost gtest ctags telegram-desktop-bin latex-beamer nodejs npm nodejs-hexo-cli neofetch)
+BASE=(arandr sysstat lm_sensors acpi acpid git gdb base-devel neovim zsh tmux python3 python-pip pulseaudio networkmanager network-manager-applet dhclient xfce4-terminal rofi xarchiver unrar lxappearance nitrogen ranger pcmanfm gparted htop gvfs exfat-utils xdotool xdgutils dmraid dmidecode dosfstools iptables ipw2100-fw ipw2200-fw aic94xx-firmware wd719x-firmware linux-firmware nfs-3g nfs-utils gnome-keyring polkit-gnome tmux rfkill openssh) 
+BASE_ADD=(unclutter redshift vlc cmake viewnior mupdf markdown zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps ibus ibus-kkc ibus-pinyin xfce4-power-manager isousb cronie)
+SOFTWARES=(firefox thunderbird slack-desktop xfce4-terminal-base16-colors-git uget tor-browser filezilla xmind visual-paradigm-community wps-office ttf-wps-fonts ttf-ms-fonts paper-icon-theme boost gtest ctags telegram-desktop-bin latex-beamer nodejs npm nodejs-hexo-cli neofetch texlive-most inkscape clang zuki-themes)
 pacman -Qe|awk 'BEGIN{FS=" "};{print $1}' > $INSTALLED_PACKAGE 
 
 install(){
@@ -17,7 +17,7 @@ install(){
             fi
             if [ $2 = "yaourt" ]; then
             echo "----------------------install $item--------------------------------"
-               yaourt -Su --noconfirm $item
+               yaourt -S --noconfirm $item
             fi
         fi
     done
@@ -39,14 +39,6 @@ install_ohmyzsh(){
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 }
 
-check_root(){
-    if [ "$EUID" -ne 0 ]; then
-        return 1
-    else
-        return 0
-    fi
-}
-
 main(){
     while [ "$1" != "" ]; do
         case $1 in 
@@ -64,8 +56,8 @@ main(){
     
     case "$type" in
         base )
-            root=check_root    
-            if [ $root -ne 0 ]; then
+            root=`echo $EUID`
+            if [[ $root -ne 0 ]]; then
                 echo "please execute this script using root"
             else
                 echo "[archlinuxfr]" >> /etc/pacman.conf
@@ -76,8 +68,8 @@ main(){
             fi
             ;;
         base_add )
-            root=check_root    
-            if [ $root -ne 0 ]; then
+            root=`echo $EUID`
+            if [[ $root -ne 0 ]]; then
                 echo "please execute this script using root"
             else
                 install "${BASE_ADD[*]}" "pacman"
@@ -87,24 +79,24 @@ main(){
             cp ./.blur_lock.sh.bak /usr/bin/blurlock
             ;;
         software )
-            root=check_root    
-            if [ $root -ne 0 ]; then
+            root=`echo $EUID`
+            if [[ $root -ne 0 ]]; then
                 echo "please execute this script using root"
             else
                 install "${SOFTWARES[*]}" "yaourt"
             fi
             ;;
         i3 )
-            root=check_root    
-            if [ $root -ne 0 ]; then
+            root=`echo $EUID`
+            if [[ $root -ne 0 ]]; then
                 echo "please execute this script using root"
             else
                 install_i3 
             fi
             ;;
         config )
-            root=check_root    
-            if [ $root -eq 0 ]; then
+            root=`echo $EUID`
+            if [[ $root -eq 0 ]]; then
                 echo "please execute this script using common user, not root"
                 exit -1
             fi
@@ -116,15 +108,13 @@ main(){
             cp ./battery.py.bak ~/.i3/battery.py
             cp ./monitor.sh.bak ~/.i3/monitor.sh
             cp ./.xinitrc.bak ~/.xinitrc
-            cp ./.extend.xinitrc.bak ~/.extend.xinitrc
             cp ./.autostart.sh.bak ~/.autostart.sh
             cp ./.cronjob.sh.bak ~/.cronjob.sh
             cp ./.tmux.conf.bak ~/.tmux.conf
-            cp ./.Xresources.bak ~/.Xresources
             cp ./.zshrc.bak ~/.zshrc
             cp ./.tmux.conf.bak ~/.tmux.conf
             cp ./.tmux.conf.local.bak ~/.tmux.conf.local
-            cp ./.bandwidth.bak ~/.i3/bandwidth
+            cp ./bandwidth.bak ~/.i3/bandwidth
             cp ./.zprofile.bak ~/.zprofile
             
             echo "---------------------copy customized fons--------------------------------------"
@@ -133,8 +123,8 @@ main(){
             fc-cache ~/.local/share/fonts
             ;;
         spacevim )
-            root=check_root    
-            if [ $root -eq 0 ]; then
+            root=`echo $EUID`
+            if [[ $root -eq 0 ]]; then
                 echo "please execute this script using common user, not root"
                 exit -1
             fi
@@ -143,8 +133,8 @@ main(){
             install_spacevim
             ;;
         ohmyzsh )
-            root=check_root
-            if [ $root -eq 0];then
+            root=`echo $EUID`
+            if [[ $root -eq 0 ]];then
                 echo "please execute this script using common user, not root"
                 exit -1
             fi
