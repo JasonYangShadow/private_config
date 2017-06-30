@@ -68,6 +68,10 @@ main(){
             if [ $root -ne 0 ]; then
                 echo "please execute this script using root"
             else
+                echo "[archlinuxfr]" >> /etc/pacman.conf
+                echo "SigLevel=Never" >> /etc/pacman.conf
+                echo "Server=http://repo.archlinux.fr/\$arch" >> /etc/pacman.conf
+                `pacman -Syu yaourt`
                 install "${BASE[*]}" "pacman"
             fi
             ;;
