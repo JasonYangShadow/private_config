@@ -185,16 +185,12 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 bar {
-  position bottom 
   font pango:Source Sans Pro-10 10
   status_command i3blocks -c ~/.i3/i3blocks.conf
   tray_output primary
-  mode hide
-  hidden_state hide
-  modifier Mod1
+  height 18 
   colors {
-    separator #268bd2
-    background #333333
+    background #444444
     statusline #839496
     focused_workspace #fdf6e3 #f49242 #fdf6e3
     active_workspace #fdf6e3 #6c71c4 #fdf6e3
@@ -242,7 +238,7 @@ bindsym XF86AudioPrev exec playerctl previous
 #for_window [class="^.*"] border pixel 2
 
 # Set inner/outer gaps
-gaps inner 10 
+gaps inner 5 
 gaps outer 5 
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
@@ -290,12 +286,10 @@ mode "$mode_gaps_outer" {
 ##floating window control
 # Open specific applications in floating mode
 for_window [class="GParted"] floating enable border normal
-for_window [class="Lightdm-gtk-greeter-settings"] floating enable
 for_window [class="Lxappearance"] floating enable border normal
 for_window [class="Nitrogen"] floating enable sticky enable border normal
 for_window [class="Pavucontrol"] floating enable
 for_window [class="(?i)virtualbox"] floating enable border normal
-for_window [class="Hexchat"] floating enable
 for_window [class="Slack"] floating enable
 # end
 # editor by jason @2017 
