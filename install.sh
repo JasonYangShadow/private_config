@@ -60,10 +60,16 @@ main(){
             if [[ $root -ne 0 ]]; then
                 echo "please execute this script using root"
             else
+                echo "----------------------output yaourt address to pacman.conf--------------------------------------"
                 echo "[archlinuxfr]" >> /etc/pacman.conf
                 echo "SigLevel=Never" >> /etc/pacman.conf
                 echo "Server=http://repo.archlinux.fr/\$arch" >> /etc/pacman.conf
+                echo "----------------------modify the mirrorlist--------------------------------------"
+                cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
+                cp ./mirrorlist.bak /etc/pacman.d/mirrorlist
                 `pacman -Syu yaourt`
+                echo "----------------------disable bluetooth--------------------------------------"
+                `rfkill block bluetooth`
                 install "${BASE[*]}" "pacman"
             fi
             ;;
@@ -111,8 +117,6 @@ main(){
             cp ./.autostart.sh.bak ~/.autostart.sh
             cp ./.cronjob.sh.bak ~/.cronjob.sh
             cp ./.tmux.conf.bak ~/.tmux.conf
-            cp ./.zshrc.bak ~/.zshrc
-            cp ./.tmux.conf.bak ~/.tmux.conf
             cp ./.tmux.conf.local.bak ~/.tmux.conf.local
             cp ./bandwidth.bak ~/.i3/bandwidth
             cp ./.zprofile.bak ~/.zprofile
@@ -140,6 +144,7 @@ main(){
             fi
             echo "--------------------install ohmyzsh---------------------------------"
             install_ohmyzsh
+            cp ./.zshrc.bak ~/.zshrc
             ;;
         * )
             echo "type is one of {base base_add software config spacevim ohmyzsh i3}"
@@ -148,4 +153,4 @@ main(){
     esac
 }
 
-main $@ | tee -a "/tmp/installment.log" 
+main $@ | tee -a "~/installment.log" 
