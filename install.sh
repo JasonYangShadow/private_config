@@ -1,6 +1,6 @@
 #!/bin/bash
 
-INSTALLED_PACKAGE=/tmp/installed_package
+INSTALLED_PACKAGE=~/installed_package
 BASE=(arandr sysstat lm_sensors acpi acpid git gdb base-devel neovim zsh tmux python3 python-pip pulseaudio networkmanager network-manager-applet dhclient xfce4-terminal rofi xarchiver unrar lxappearance nitrogen ranger pcmanfm gparted htop gvfs exfat-utils xdotool xdgutils dmraid dmidecode dosfstools iptables ipw2100-fw ipw2200-fw aic94xx-firmware wd719x-firmware linux-firmware nfs-3g nfs-utils gnome-keyring polkit-gnome tmux rfkill openssh) 
 BASE_ADD=(unclutter redshift vlc cmake viewnior mupdf markdown zathura zathura-cb zathura-djvu zathura-pdf-mupdf zathura-ps ibus ibus-kkc xfce4-power-manager isousb cronie)
 SOFTWARES=(firefox thunderbird slack-desktop xfce4-terminal-base16-colors-git uget filezilla xmind visual-paradigm-community wps-office ttf-wps-fonts ttf-ms-fonts paper-icon-theme boost gtest ctags telegram-desktop-bin latex-beamer nodejs npm nodejs-hexo-cli neofetch texlive-most inkscape clang zuki-themes wqy-microhei docker papirus-icon-theme-git teamviewer)
@@ -59,6 +59,7 @@ main(){
             root=`echo $EUID`
             if [[ $root -ne 0 ]]; then
                 echo "please execute this script using root"
+                exit -1
             else
                 echo "----------------------output yaourt address to pacman.conf--------------------------------------"
                 echo "[archlinuxfr]" >> /etc/pacman.conf
@@ -68,15 +69,16 @@ main(){
                 cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
                 cp ./mirrorlist.bak /etc/pacman.d/mirrorlist
                 `pacman -Syu yaourt`
+                install "${BASE[*]}" "pacman"
                 echo "----------------------disable bluetooth--------------------------------------"
                 `rfkill block bluetooth`
-                install "${BASE[*]}" "pacman"
             fi
             ;;
         base_add )
             root=`echo $EUID`
             if [[ $root -ne 0 ]]; then
                 echo "please execute this script using root"
+                exit -1
             else
                 install "${BASE_ADD[*]}" "pacman"
             fi
@@ -86,16 +88,18 @@ main(){
             ;;
         software )
             root=`echo $EUID`
-            if [[ $root -ne 0 ]]; then
-                echo "please execute this script using root"
+            if [[ $root -eq 0 ]]; then
+                echo "please execute this script using common user, not root"
+                exit -1
             else
                 install "${SOFTWARES[*]}" "yaourt"
             fi
             ;;
         i3 )
             root=`echo $EUID`
-            if [[ $root -ne 0 ]]; then
-                echo "please execute this script using root"
+            if [[ $root -eq 0 ]]; then
+                echo "please execute this script using common user, not root"
+                exit -1
             else
                 install_i3 
             fi
