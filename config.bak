@@ -8,7 +8,7 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
+set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -117,10 +117,7 @@ bindsym $mod+Shift+minus move scratchpad
 bindsym $mod+minus scratchpad show
 
 #moving containers to different outputs
-bindsym $mod+Mod1+l move workspace to output right
-bindsym $mod+Mod1+j move workspace to output down 
-bindsym $mod+Mod1+k move workspace to output up
-bindsym $mod+Mod1+h move workspace to output left 
+bindsym $mod+Ctrl+o move workspace to output right
 
 # switch to workspace
 bindsym $mod+1 workspace 1
