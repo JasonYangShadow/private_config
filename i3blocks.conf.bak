@@ -32,7 +32,7 @@ interval=10
 label=
 command=echo "$(proxychains curl ipecho.net/plain;echo 2>&1 > /dev/null | awk 'END{print}')"
 color=#f4415f
-interval=900
+interval=300
 
 [bandwidth]
 command=~/.i3/bandwidth
