@@ -28,6 +28,12 @@ command=/usr/lib/i3blocks/iface
 color=#00FF00
 interval=10
 
+[tor]
+label=
+command=echo "$(proxychains curl ipecho.net/plain;echo 2>&1 > /dev/null | awk 'END{print}')"
+color=#00a878
+interval=900
+
 [bandwidth]
 command=~/.i3/bandwidth
 interval=persist
