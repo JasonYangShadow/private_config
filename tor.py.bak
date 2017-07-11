@@ -1,0 +1,10 @@
+#!/bin/python
+import socks
+import socket
+
+if __name__ == '__main__':
+    socks.setdefaultproxy(socks.PROXY_TYPE_SOCKS5, "127.0.0.1", 9050)
+    socket.socket = socks.socksocket
+    from urllib.request import urlopen
+    html = urlopen("http://ipecho.net/plain")
+    print(html.read().decode('utf-8')) 
