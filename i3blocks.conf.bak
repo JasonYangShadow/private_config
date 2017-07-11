@@ -30,9 +30,9 @@ interval=10
 
 [tor]
 label=
-command=/bin/python ~/.i3/tor.py
+command=/bin/python2 ~/.i3/tor.py
 color=#f4415f
-interval=180
+interval=60
 
 [bandwidth]
 command=~/.i3/bandwidth
