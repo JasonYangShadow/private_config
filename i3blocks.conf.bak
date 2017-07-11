@@ -30,7 +30,7 @@ interval=10
 
 [tor]
 label=
-command=echo "$(curl -x socks5://127.0.0.1:9050 ipv4.icanhazip.com;echo)" 
+command=echo "$(curl -x socks5://127.0.0.1:9050 ipecho.net/plain;echo)" 
 color=#f4415f
 interval=300
 
