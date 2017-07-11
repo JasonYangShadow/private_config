@@ -1,0 +1,7 @@
+#!/bin/bash
+
+IP=`curl -x socks5://127.0.0.1:9050 ipecho.net/plain -m 10 ; echo`
+Regx="[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}"
+if [[ $IP =~ $Regx ]];then
+  echo $IP
+fi
