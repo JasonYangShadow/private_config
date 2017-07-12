@@ -187,7 +187,7 @@ bar {
   tray_output primary
   height 18 
   colors {
-    background #444444
+    background #222222
     statusline #839496
     focused_workspace #fdf6e3 #f49242 #fdf6e3
     active_workspace #fdf6e3 #6c71c4 #fdf6e3
