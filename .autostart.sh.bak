@@ -11,9 +11,9 @@ InstCheck(){
  fi
 }
 
-InstCheck ibus-daemon
+InstCheck fcitx 
 if [ $? -ne 0 ];then
-    ibus-daemon -drv & 
+    fcitx & 
 fi
 
 InstCheck nm-applet 
