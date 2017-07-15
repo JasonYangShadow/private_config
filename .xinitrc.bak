@@ -1,8 +1,13 @@
 #!/bin/sh
 #
 # Executed by startx (run your window manager from here)
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
 
 xmodmap -e "clear lock" #disable caps lock switch
 xmodmap -e "keysym Caps_Lock = Escape" #set caps_lock as escape
 
 exec i3 
+
+
