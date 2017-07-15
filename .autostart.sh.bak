@@ -1,6 +1,4 @@
-#!/bin/bash
-
-source ~/.xinitrc
+#!/bin/sh
 
 InstCheck(){
  inst=`ps -ef|grep -v grep|grep $1|wc -l`
@@ -21,19 +19,9 @@ if [ $? -ne 0 ];then
     nm-applet & 
 fi
 
-#InstCheck blueman-applet 
-#if [ $? -ne 0 ];then
-#    blueman-applet & 
-#fi
-
 InstCheck slack 
 if [ $? -ne 0 ];then
     slack & 
-fi
-
-InstCheck hexchat 
-if [ $? -ne 0 ];then
-    hexchat --minimize=2 & 
 fi
 
 InstCheck telegram-desktop 
@@ -61,13 +49,9 @@ if [ $? -ne 0 ];then
     redshift -t 6500:4500 -l 35.4:139.4 &
 fi
 
-#InstCheck chromium   
-#if [ $? -ne 0 ];then
-#    chromium &
-#fi
-
 InstCheck firefox 
 if [ $? -ne 0 ];then
     firefox &
 fi
+
 
