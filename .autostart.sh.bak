@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ~/.extend.xinitrc
+source ~/.xinitrc
 
 InstCheck(){
  inst=`ps -ef|grep -v grep|grep $1|wc -l`
