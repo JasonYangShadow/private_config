@@ -34,7 +34,7 @@ let g:clang2_placeholder_prev = ''
 
 
 " set SpaceVim colorscheme
-let g:spacevim_colorscheme = 'base16-ir-black'
+let g:spacevim_colorscheme = 'PaperColor'
 
 " set the guifont
 let g:spacevim_guifont = 'DejaVu\ Sans\ Mono\ for\ Powerline\ 11'
