@@ -8,3 +8,4 @@ if [ $extern_flag -eq 1 ];then
 else
     xrandr --output $INTERNAL_OUTPUT --primary --mode 1280x800 --rotate normal --output $EXTERNAL_OUTPUT --off
 fi
+nitrogen --restore
