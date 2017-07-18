@@ -14,11 +14,6 @@ if [ $? -ne 0 ];then
     fcitx & 
 fi
 
-InstCheck compton 
-if [ $? -ne 0 ];then
-    compton -b 
-fi
-
 InstCheck nm-applet 
 if [ $? -ne 0 ];then
     nm-applet & 
