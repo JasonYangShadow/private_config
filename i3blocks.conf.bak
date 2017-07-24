@@ -34,6 +34,13 @@ command=/bin/python2 ~/.i3/tor.py
 color=#95DEE3
 interval=60
 
+[ss]
+label=
+command=/bin/python2 ~/.i3/ss.py
+color=#42f4a4
+interval=90
+
+
 [bandwidth]
 command=~/.i3/bandwidth
 interval=persist
