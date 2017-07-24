@@ -85,6 +85,7 @@ main(){
             echo "---------------------copy i3exit and blurlock to /usr/bin/ -------------------"
             cp ./i3exit /usr/bin/i3exit
             cp ./.blur_lock.sh.bak /usr/bin/blurlock
+            cp ./torrc.bak /etc/tor/torrc
             ;;
         software )
             root=`echo $EUID`
