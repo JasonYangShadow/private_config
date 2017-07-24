@@ -85,7 +85,6 @@ main(){
             echo "---------------------copy i3exit and blurlock to /usr/bin/ -------------------"
             cp ./i3exit /usr/bin/i3exit
             cp ./.blur_lock.sh.bak /usr/bin/blurlock
-            cp ./torrc.bak /etc/tor/torrc
             ;;
         software )
             root=`echo $EUID`
@@ -132,6 +131,7 @@ main(){
             mkdir -p ~/.local/share/fonts
             cp ./fonts/* ~/.local/share/fonts 
             fc-cache ~/.local/share/fonts
+            echo "remember to copy torrc and create relative json file for ss"
             ;;
         spacevim )
             root=`echo $EUID`
