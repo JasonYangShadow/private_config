@@ -116,6 +116,7 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
+
 #moving containers to different outputs
 bindsym $mod+Ctrl+o move workspace to output right
 bindsym $mod+Ctrl+y move workspace to output left
@@ -299,9 +300,10 @@ mode "$mode_gaps_outer" {
 # Open specific applications in floating mode
 for_window [class="GParted"] floating enable border normal
 for_window [class="Lxappearance"] floating enable border normal
-for_window [class="Nitrogen"] floating enable sticky enable border normal
+for_window [class="Nitrogen"] floating enable border normal
 for_window [class="Pavucontrol"] floating enable
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Slack"] floating enable
+
 # end
 # editor by jason @2017 
