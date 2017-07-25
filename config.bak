@@ -118,6 +118,9 @@ bindsym $mod+minus scratchpad show
 
 #moving containers to different outputs
 bindsym $mod+Ctrl+o move workspace to output right
+bindsym $mod+Ctrl+y move workspace to output left
+bindsym $mod+Ctrl+u move workspace to output down
+bindsym $mod+Ctrl+i move workspace to output up 
 
 # define workspace
 set $WS1 "1: "
