@@ -226,9 +226,6 @@ exec --no-startup-id ~/.i3/monitor.sh
 exec ~/.autostart.sh &
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 
-assign [class="Thunderbird"] $WS1
-assign [class="Slack"] $WS1
-
 #volume and screen light control
 #bindsym $mod+F12 exec amixer set Master 5%+
 #bindsym $mod+F11 exec amixer set Master 5%-
@@ -298,12 +295,17 @@ mode "$mode_gaps_outer" {
 
 ##floating window control
 # Open specific applications in floating mode
-for_window [class="GParted"] floating enable border normal
-for_window [class="Lxappearance"] floating enable border normal
-for_window [class="Nitrogen"] floating enable border normal
+for_window [class="GParted"] floating enable
+for_window [class="Lxappearance"] floating enable
+for_window [class="Nitrogen"] floating enable
 for_window [class="Pavucontrol"] floating enable
-for_window [class="(?i)virtualbox"] floating enable border normal
-for_window [class="Slack"] floating enable
+for_window [class="(?i)virtualbox"] floating enable
+for_window [class="Slack"] floating enable move scratchpad
+for_window [class="Telegram"] floating enable move scratchpad
+for_window [class="Thunderbird"] floating enable move scratchpad
 
+bindsym $mod+Mod1+0 [class="Slack"] scratchpad show
+bindsym $mod+Mod1+9 [class="Telegram"] scratchpad show
+bindsym $mod+Mod1+8 [class="Thunderbird"] scratchpad show
 # end
 # editor by jason @2017 
