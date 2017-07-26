@@ -54,4 +54,9 @@ if [ $? -ne 0 ];then
     firefox &
 fi
 
+InstCheck zeal 
+if [ $? -ne 0 ];then
+    zeal &
+fi
+
 
