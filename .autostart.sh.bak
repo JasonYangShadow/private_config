@@ -59,4 +59,9 @@ if [ $? -ne 0 ];then
     zeal &
 fi
 
+InstCheck feedreader 
+if [ $? -ne 0 ];then
+    feedreader &
+fi
+
 
