@@ -306,7 +306,7 @@ for_window [class="Thunderbird"] floating enable move scratchpad
 for_window [class="Gradio"] floating enable 
 for_window [class="Zeal"] floating enable 
 for_window [class="Feedreader"] floating enable move scratchpad
-for_window [class="Spotfiy"] floating enable move scratchpad
+for_window [class="Spotify"] floating enable move scratchpad
 
 bindsym $mod+Mod1+0 [class="Slack"] scratchpad show
 bindsym $mod+Mod1+9 [class="Telegram"] scratchpad show
