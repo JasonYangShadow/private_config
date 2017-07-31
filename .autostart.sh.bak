@@ -64,4 +64,9 @@ if [ $? -ne 0 ];then
     feedreader &
 fi
 
+InstCheck goldendict 
+if [ $? -ne 0 ];then
+    goldendict &
+fi
+
 
