@@ -296,6 +296,7 @@ mode "$mode_gaps_outer" {
 ##floating window control
 # Open specific applications in floating mode
 for_window [class="GParted"] floating enable
+for_window [class="Xarchiver"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="Nitrogen"] floating enable
 for_window [class="Pavucontrol"] floating enable
