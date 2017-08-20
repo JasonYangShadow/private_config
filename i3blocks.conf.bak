@@ -2,34 +2,34 @@
 separator_block_width=14
 
 [memory]
-#label=
+label=
 command=/usr/lib/i3blocks/memory
 separator=true
 interval=30
 color=#578CA9
 
 [disk-root]
-#label=
+label=
 command=/usr/lib/i3blocks/disk /
 interval=30
 color=#F6D155
 
 [ethernet]
-#label=
+label=
 instance=enp0s25
 command=/usr/lib/i3blocks/iface
 color=#004B8D
 interval=10
 
 [wireless]
-#label=
+label=
 instance=wlp2s0
 command=/usr/lib/i3blocks/iface
 color=#F2552C
 interval=10
 
 [tor]
-#label=
+label=
 command=/bin/python2 ~/.i3/tor.py
 color=#95DEE3
 interval=60
@@ -47,14 +47,14 @@ markup=pango
 color=#EDCDC2
 
 [temp]
-#label=
+label=
 command=echo "$(sensors coretemp-isa-0000 | awk '/Core 0:/ {print $3}')"
 interval=10
 color=#CE3175
 
 #install yaourt -S sysstat
 [cpu]
-#label=
+label=
 command=/usr/lib/i3blocks/cpu_usage
 interval=10
 #min_width=100.00%
@@ -67,21 +67,21 @@ color=#5A7247
 #color=#6c71c4
 
 [volume]
-#label=
+label=
 command=/usr/lib/i3blocks/volume
 interval=2
 signal=10
 color=#CFB095
 
 [battery]
-#label=
+label=
 command=python3 ~/.i3/battery.py
 markup=pango
 interval=10
 color=#79C753
 
 [time]
-#label=
+label=
 command=date '+%a %m-%d-%y %k:%M'
 interval=5
 color=#FAE03C
