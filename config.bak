@@ -308,11 +308,13 @@ for_window [class="Gradio"] floating enable
 for_window [class="Zeal"] floating enable 
 for_window [class="Feedreader"] floating enable move scratchpad
 for_window [class="Spotify"] floating enable move scratchpad
+for_window [class="netease-cloud-music"] floating enable move scratchpad
 
 bindsym $mod+Mod1+0 [class="Slack"] scratchpad show
 bindsym $mod+Mod1+9 [class="Telegram"] scratchpad show
 bindsym $mod+Mod1+8 [class="Thunderbird"] scratchpad show
 bindsym $mod+Mod1+7 [class="Feedreader"] scratchpad show
 bindsym $mod+Mod1+6 [class="Spotify"] scratchpad show
+bindsym $mod+Mod1+5 [class="netease-cloud-music"] scratchpad show
 # end
 # editor by jason @2017 
