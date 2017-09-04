@@ -69,4 +69,9 @@ if [ $? -ne 0 ];then
     goldendict &
 fi
 
+InstCheck dropbox 
+if [ $? -ne 0 ];then
+    dropbox &
+fi
+
 
