@@ -49,9 +49,9 @@ if [ $? -ne 0 ];then
     redshift -t 6500:4500 -l 35.4:139.4 &
 fi
 
-InstCheck firefox 
+InstCheck chromium 
 if [ $? -ne 0 ];then
-    firefox &
+    chromium &
 fi
 
 InstCheck zeal 
