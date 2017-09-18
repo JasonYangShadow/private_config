@@ -1,11 +1,17 @@
 #!/bin/bash
-EXTERNAL_OUTPUT="VGA1"
-INTERNAL_OUTPUT="LVDS1"
+INTERNAL_OUTPUT="eDP1"
+VGA="VGA1"
+HDMI="HDMI1"
 
-extern_flag=`xrandr|grep "VGA1 connected"|wc -l`
-if [ $extern_flag -eq 1 ];then
-    xrandr --output $INTERNAL_OUTPUT --primary --mode 1280x800 --rotate normal --output $EXTERNAL_OUTPUT --auto --right-of $INTERNAL_OUTPUT
+vga_flag=`xrandr|grep "$VGA connected"|wc -l`
+hdmi_flag=`xrandr|grep "$HDMI connected"|wc -l`
+if [ $vga_flag -eq 1 ] && [ $hdmi_flag -eq 1 ];then
+    xrandr --output $INTERNAL_OUTPUT --primary --auto --rotate normal --output $VGA --rotate left --auto --right-of $INTERNAL_OUTPUT --output $HDMI --auto --left-of $INTERNAL_OUTPUT
+elif [ $vga_flag -eq 1 ] && [ $hdmi_flag -eq 0 ];then
+    xrandr --output $INTERNAL_OUTPUT --primary --auto --rotate normal --output $VGA --rotate left --auto --right-of $INTERNAL_OUTPUT 
+elif [ $hdmi_flag -eq 1 ] && [ $vga_flag -eq 0 ];then
+    xrandr --output $INTERNAL_OUTPUT --primary --auto --rotate normal --output $HDMI --auto --left-of $INTERNAL_OUTPUT 
 else
-    xrandr --output $INTERNAL_OUTPUT --primary --mode 1280x800 --rotate normal --output $EXTERNAL_OUTPUT --off
+    xrandr --output $INTERNAL_OUTPUT --primary --auto --rotate normal --output $VGA --off --output $HDMI --off 
 fi
 nitrogen --restore
