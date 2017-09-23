@@ -74,4 +74,9 @@ if [ $? -ne 0 ];then
     dropbox &
 fi
 
+InstCheck megasync 
+if [ $? -ne 0 ];then
+    megasync &
+fi
+
 
