@@ -74,9 +74,14 @@ if [ $? -ne 0 ];then
     dropbox &
 fi
 
-InstCheck megasync 
+InstCheck megasync
 if [ $? -ne 0 ];then
     megasync &
+fi
+
+InstCheck xscreensaver 
+if [ $? -ne 0 ];then
+    xscreensaver &
 fi
 
 
