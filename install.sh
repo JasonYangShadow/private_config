@@ -120,7 +120,9 @@ main(){
             cp ./.xinitrc.bak ~/.xinitrc
             cp ./.autostart.sh.bak ~/.autostart.sh
             cp ./.cronjob.sh.bak ~/.cronjob.sh
-            cp ./.tmux.conf.bak ~/.tmux.conf cp ./.tmux.conf.local.bak ~/.tmux.conf.local cp ./tor.py.bak ~/.i3/tor.py
+            cp ./.tmux.conf.bak ~/.tmux.conf 
+            cp ./.tmux.conf.local.bak ~/.tmux.conf.local 
+            cp ./tor.py.bak ~/.i3/tor.py
             cp ./ss.py.bak ~/.i3/ss.py
             cp ./bandwidth.bak ~/.i3/bandwidth
             cp ./.zprofile.bak ~/.zprofile
