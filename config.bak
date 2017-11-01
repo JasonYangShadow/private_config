@@ -85,7 +85,7 @@ bindsym $mod+Shift+Ctrl+m exec --no-startup-id ~/.i3/monitor.sh
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+q layout toggle split
 
 #workspace default settings
 workspace_layout tabbed 
