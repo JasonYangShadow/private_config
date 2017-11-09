@@ -34,7 +34,7 @@ let g:clang2_placeholder_prev = ''
 
 
 " set SpaceVim colorscheme
-let g:spacevim_colorscheme = 'base16-dracula'
+let g:spacevim_colorscheme = 'base16-london-tube'
 
 " set the guifont
 let g:spacevim_guifont = 'DejaVu\ Sans\ Mono\ for\ Powerline\ 11'
@@ -43,7 +43,6 @@ let g:spacevim_custom_plugins = [
 \ ['plasticboy/vim-markdown', {'on_ft' : 'markdown'}],
 \ ['wsdjeg/GitHub.vim'],
 \ ['JamshedVesuna/vim-markdown-preview'],
-\ ['airblade/vim-rooter'],
 \ ]
 
 let g:spacevim_max_column=80
@@ -72,6 +71,4 @@ let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_use_xdg_open=1
 "let vim_markdown_preview_github=1
 "
-"
-let g:rooter_change_directory_for_non_project_files="current"
-let g:rooter_patterns=['.git/','README.md']
+
