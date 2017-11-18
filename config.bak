@@ -246,8 +246,8 @@ bindsym XF86AudioPrev exec playerctl previous
 #for_window [class="^.*"] border pixel 2
 
 # Set inner/outer gaps
-gaps inner 1
-gaps outer 1
+gaps inner 3
+gaps outer 3
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
@@ -294,7 +294,6 @@ mode "$mode_gaps_outer" {
 ##floating window control
 # Open specific applications in floating mode
 for_window [class="GParted"] floating enable
-for_window [class="Bleachbit"] floating enable
 for_window [class="Xarchiver"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="Nitrogen"] floating enable
@@ -304,6 +303,5 @@ for_window [class="Telegram"] floating enable move scratchpad
 
 bindsym $mod+Mod1+0 [class="Slack"] scratchpad show
 bindsym $mod+Mod1+9 [class="Telegram"] scratchpad show
-bindsym $mod+Mod1+8 [class="Spotify"] scratchpad show
 # end
 # editor by jason @2017 
