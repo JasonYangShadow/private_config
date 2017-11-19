@@ -11,4 +11,5 @@ import urllib2
 html=urllib2.urlopen("http://ip-api.com/json",timeout=45)
 json_result=json.loads(html.read())
 if json_result['status']=="success":
-    print(json_result['query']+'('+json_result['countryCode']+')')
+    #print(json_result['query']+'('+json_result['countryCode']+')')
+    print(json_result['countryCode'])
