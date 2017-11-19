@@ -160,7 +160,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 #hibernate suspend and etc
 #bindsym $mod+Ctrl+Shift+h exec --no-startup-id i3exit hibernate, mode "default"
@@ -225,8 +225,6 @@ exec ~/.autostart.sh &
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 
 #volume and screen light control
-#bindsym $mod+F12 exec amixer set Master 5%+
-#bindsym $mod+F11 exec amixer set Master 5%-
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
