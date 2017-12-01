@@ -16,7 +16,7 @@ call SpaceVim#layers#load('lang#python')
 call SpaceVim#layers#load('lang#xml')
 call SpaceVim#layers#load('lang#haskell')
 call SpaceVim#layers#load('lang#elixir')
-call SpaceVim#layers#load('tools#screensaver')
+"call SpaceVim#layers#load('tools#screensaver')
 call SpaceVim#layers#load('shell')   
 "let g:spacevim_enable_vimfiler_welcome = 1
 "let g:spacevim_enable_debug = 1
@@ -24,7 +24,13 @@ let g:deoplete#auto_complete_delay = 50
 let g:spacevim_enable_tabline_filetype_icon = 1
 let g:spacevim_enable_os_fileformat_icon = 1
 let g:spacevim_buffer_index_type = 1
-let g:neomake_vim_enabled_makers = ['vimlint', 'vint']
+let g:neomake_vim_enabled_makers = []
+if executable('vimlint')
+    call add(g:neomake_vim_enabled_makers, 'vimlint') 
+endif
+if executable('vint')
+    call add(g:neomake_vim_enabled_makers, 'vint') 
+endif
 if has('python3')
     let g:ctrlp_map = ''
     nnoremap <silent> <C-p> :Denite file_rec<CR>
@@ -67,8 +73,8 @@ let g:vimtex_compiler_latexmk = {
       \}
 
 "vim markdown preview
-let vim_markdown_preview_hotkey='<C-m>'
+let vim_markdown_preview_hotkey='<C-p>'
 let vim_markdown_preview_use_xdg_open=1
 "let vim_markdown_preview_github=1
 "
-
+let g:spacevim_enable_ycm = 1
