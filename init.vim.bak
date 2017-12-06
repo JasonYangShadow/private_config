@@ -40,7 +40,7 @@ let g:clang2_placeholder_prev = ''
 
 
 " set SpaceVim colorscheme
-let g:spacevim_colorscheme = 'base16-phd'
+let g:spacevim_colorscheme = 'PaperColor'
 
 " set the guifont
 let g:spacevim_guifont = 'DejaVu\ Sans\ Mono\ for\ Powerline\ 11'
@@ -73,8 +73,10 @@ let g:vimtex_compiler_latexmk = {
       \}
 
 "vim markdown preview
-let vim_markdown_preview_hotkey='<C-p>'
-let vim_markdown_preview_use_xdg_open=1
+let g:vim_markdown_preview_hotkey='<C-p>'
+let g:vim_markdown_preview_use_xdg_open=1
 "let vim_markdown_preview_github=1
 "
 let g:spacevim_enable_ycm = 1
+
+let g:spacevim_enable_neomake = 0
