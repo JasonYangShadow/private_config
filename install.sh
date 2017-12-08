@@ -1,9 +1,9 @@
 #!/bin/bash
 
 INSTALLED_PACKAGE=~/installed_package
-BASE=(arandr sysstat lm_sensors acpi acpid git gdb base-devel neovim zsh tmux python2-pip pulseaudio networkmanager network-manager-applet dhclient terminator rofi nitrogen ranger pcmanfm gparted htop gvfs exfat-utils xdotool xdgutils dmraid dmidecode dosfstools iptables linux-firmware nfs-3g nfs-utils gnome-keyring polkit-gnome tmux rfkill openssh python-virtualenv) 
+BASE=(arandr sysstat lm_sensors acpi acpid git gdb update-grub base-devel neovim zsh tmux python2-pip pulseaudio pavucontrol alsa-utils networkmanager network-manager-applet dhclient terminator rofi nitrogen ranger pcmanfm gparted htop gvfs exfat-utils xdotool xdgutils dmraid dmidecode dosfstools iptables linux-firmware nfs-3g nfs-utils gnome-keyring polkit-gnome tmux rfkill openssh python-virtualenv) 
 BASE_ADD=(unclutter redshift vlc viewnior markdown mupdf zathura zathura-cb zathura-djvu zathura-ps zathura-pdf-mupdf fcitx fcitx-gtk3 fcitx-configtool fcitx-googlepinyin fcitx-kkc xfce4-power-manager isousb cronie shadowsocks proxychains-ng tor arm dnsutils xclip compton lua xscreensaver traceroute mtr)
-SOFTWARES=(firefox thunderbird slack-desktop libreoffice-fresh uget ctags telegram-desktop-bin latex-beamer nodejs npm nodejs-hexo-cli neofetch texlive-most inkscape docker qt4 simplescreenrecorder wqy-microhei lxappearance dropbox megasync)
+SOFTWARES=(firefox thunderbird slack-desktop libreoffice-fresh uget ctags telegram-desktop-bin latex-beamer nodejs npm nodejs-hexo-cli neofetch texlive-most inkscape docker qt4 simplescreenrecorder wqy-microhei lxappearance dropbox megasync downgrader)
 touch ~/installed_package
 pacman -Qe|awk 'BEGIN{FS=" "};{print $1}' > $INSTALLED_PACKAGE 
 
@@ -26,7 +26,7 @@ install(){
 
 install_i3(){
     echo "----------------------install i3-gaps--------------------------------------"
-    yaourt -S i3-gaps i3-scrot update-grub powerline-fonts-git
+    yaourt -S i3-gaps i3-scrot i3blocks i3lock i3status powerline-fonts-git
 }
 
 install_spacevim(){
