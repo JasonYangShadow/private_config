@@ -26,7 +26,7 @@ install(){
 
 install_i3(){
     echo "----------------------install i3-gaps--------------------------------------"
-    yaourt -S i3-gaps i3-scrot i3blocks i3lock i3status powerline-fonts-git
+    yaourt -S xorg-server i3-gaps i3-scrot i3blocks i3lock i3status powerline-fonts-git
 }
 
 install_spacevim(){
