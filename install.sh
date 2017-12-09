@@ -121,7 +121,7 @@ main(){
             cp ./config.bak ~/.i3/config
             cp ./i3blocks.conf.bak ~/.i3/i3blocks.conf
             cp ./battery.py.bak ~/.i3/battery.py
-            cp ./monitor.sh.bak ~/.i3/monitor.sh
+            cp ./monitor.py.bak ~/.i3/monitor.py
             cp ./.xinitrc.bak ~/.xinitrc
             cp ./.autostart.sh.bak ~/.autostart.sh
             cp ./.cronjob.sh.bak ~/.cronjob.sh

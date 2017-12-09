@@ -52,11 +52,12 @@ class Xrandr:
                     self.cmd = self.cmd + " --output " + val +" --off"
 
             subprocess.check_output(self.cmd, shell=True)
+            subprocess.check_output(['/usr/bin/variety','-n'], shell=False)
         else:
             raise ValueError('no output')
 
 
 
 if __name__ == '__main__':
-    xrandr = Xrandr(["LVDS-1","LVDS1","ePD1","ePD-1"]) 
+    xrandr = Xrandr(["LVDS-1","LVDS1","ePD1","ePD-1"])
     xrandr.generate_conf()
