@@ -69,4 +69,22 @@ if [ $? -ne 0 ];then
     xscreensaver &
 fi
 
+InstCheck variety 
+if [ $? -ne 0 ];then
+    variety &
+fi
+
+InstCheck overgrive 
+if [ $? -ne 0 ];then
+    python2 /opt/thefanclub/overgrive/overgrive &
+fi
+
+InstCheck zeal 
+if [ $? -ne 0 ];then
+    zeal &
+fi
+
+
+
+
 
