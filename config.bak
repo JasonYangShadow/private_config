@@ -220,7 +220,7 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id ~/.i3/monitor.sh
+exec --no-startup-id python2 ~/.i3/monitor.py
 exec ~/.autostart.sh &
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 
