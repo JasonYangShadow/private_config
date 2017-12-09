@@ -6,7 +6,7 @@ BASE_ADD=(unclutter redshift vlc viewnior markdown mupdf zathura zathura-cb zath
 <<<<<<< HEAD
 SOFTWARES=(firefox thunderbird slack-desktop libreoffice-fresh uget ctags telegram-desktop-bin latex-beamer nodejs npm electron nodejs-hexo-cli neofetch texlive-most inkscape docker qt4 simplescreenrecorder wqy-microhei lxappearance dropbox megasync downgrader variety lyx wps-office ttf-wps-fonts bleachbit)
 =======
-SOFTWARES=(firefox thunderbird slack-desktop uget ctags telegram-desktop-bin latex-beamer nodejs npm nodejs-hexo-cli neofetch texlive-most inkscape docker qt4 simplescreenrecorder wqy-microhei lxappearance dropbox megasync)
+SOFTWARES=(firefox thunderbird slack-desktop uget ctags telegram-desktop-bin latex-beamer nodejs npm nodejs-hexo-cli neofetch texlive-most inkscape docker qt4 simplescreenrecorder wqy-microhei lxappearance dropbox megasync zeal)
 >>>>>>> a130c0e38b214f700c7f27b6dd38414f8816df87
 touch ~/installed_package
 pacman -Qe|awk 'BEGIN{FS=" "};{print $1}' > $INSTALLED_PACKAGE 
