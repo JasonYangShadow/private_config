@@ -84,6 +84,11 @@ if [ $? -ne 0 ];then
     zeal &
 fi
 
+InstCheck tilda 
+if [ $? -ne 0 ];then
+    tilda -h &
+fi
+
 
 
 
