@@ -84,12 +84,6 @@ if [ $? -ne 0 ];then
     zeal &
 fi
 
-InstCheck corebird 
-if [ $? -ne 0 ];then
-    corebird &
-fi
-
-
 
 
 
