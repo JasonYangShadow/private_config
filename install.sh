@@ -3,7 +3,7 @@
 INSTALLED_PACKAGE=~/installed_package
 BASE=(arandr sysstat mesa lm_sensors acpi acpid git gdb update-grub base-devel neovim zsh tmux python2-pip pulseaudio pavucontrol alsa-utils networkmanager network-manager-applet dhclient terminator rofi feh ranger pcmanfm gparted htop gvfs exfat-utils xdotool xdgutils dmraid dmidecode dosfstools iptables linux-firmware aic84xx-firmware wd719-firmware nfs-3g nfs-utils gnome-keyring polkit-gnome tmux rfkill openssh python-virtualenv) 
 BASE_ADD=(unclutter redshift vlc viewnior markdown mupdf zathura zathura-cb zathura-djvu zathura-ps zathura-pdf-mupdf fcitx fcitx-gtk3 fcitx-configtool fcitx-googlepinyin fcitx-kkc xfce4-power-manager isousb cronie shadowsocks proxychains-ng tor arm dnsutils xclip compton lua xscreensaver traceroute mtr)
-SOFTWARES=(firefox thunderbird slack-desktop uget ctags telegram-desktop-bin latex-beamer nodejs npm electron nodejs-hexo-cli neofetch texlive-most docker qt4 simplescreenrecorder wqy-microhei lxappearance dropbox megasync downgrader variety lyx typora wps-office ttf-wps-fonts bleachbit go eclipse cmake)
+SOFTWARES=(firefox thunderbird slack-desktop uget ctags telegram-desktop-bin latex-beamer nodejs npm electron nodejs-hexo-cli neofetch texlive-most docker qt4 simplescreenrecorder wqy-microhei lxappearance dropbox megasync downgrader variety lyx typora wps-office ttf-wps-fonts bleachbit go cmake visual-studio-code bashdb)
 touch ~/installed_package
 pacman -Qe|awk 'BEGIN{FS=" "};{print $1}' > $INSTALLED_PACKAGE 
 
