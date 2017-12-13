@@ -296,12 +296,9 @@ for_window [class="Xarchiver"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="Nitrogen"] floating enable
 for_window [class="Pavucontrol"] floating enable
-for_window [class="Slack"] floating enable move scratchpad
-for_window [class="Telegram"] floating enable move scratchpad
+for_window [class="Slack"] floating enable
+for_window [class="Telegram"] floating enable
 for_window [class="electron-xiami"] floating enable
 for_window [class="Zeal"] floating enable
-
-bindsym $mod+Mod1+0 [class="Slack"] scratchpad show
-bindsym $mod+Mod1+9 [class="Telegram"] scratchpad show
 # end
 # editor by jason @2017 
