@@ -294,7 +294,6 @@ mode "$mode_gaps_outer" {
 for_window [class="GParted"] floating enable
 for_window [class="Xarchiver"] floating enable
 for_window [class="Lxappearance"] floating enable
-for_window [class="Nitrogen"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Slack"] floating enable
 for_window [class="Telegram"] floating enable
