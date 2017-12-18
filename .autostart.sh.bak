@@ -79,16 +79,7 @@ if [ $? -ne 0 ];then
     zeal &
 fi
 
-InstCheck tilda 
-if [ $? -ne 0 ];then
-    tilda -h &
-fi
-
 InstCheck hexchat 
 if [ $? -ne 0 ];then
-    hexchat -h &
+    hexchat &
 fi
-
-
-
-
