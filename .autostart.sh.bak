@@ -83,3 +83,13 @@ InstCheck hexchat
 if [ $? -ne 0 ];then
     hexchat &
 fi
+
+InstCheck nixnote2 
+if [ $? -ne 0 ];then
+    nixnote2 &
+fi
+
+InstCheck firefox 
+if [ $? -ne 0 ];then
+    firefox &
+fi
