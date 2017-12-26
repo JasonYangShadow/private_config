@@ -198,7 +198,7 @@ bindsym $mod+r mode "resize"
 bar {
   font pango:Source Sans Pro-10 10
   status_command i3blocks -c ~/.i3/i3blocks.conf
-  tray_output primary
+  tray_output primary 
   height 18 
   colors {
     background #222222
@@ -299,5 +299,7 @@ for_window [class="Slack"] floating enable
 for_window [class="Telegram"] floating enable
 for_window [class="electron-xiami"] floating enable
 for_window [class="Zeal"] floating enable
+for_window [class="Spotify"] floating enable
+for_window [class="Clementine"] floating enable
 # end
 # editor by jason @2017 
