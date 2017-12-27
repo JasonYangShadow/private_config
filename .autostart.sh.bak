@@ -98,3 +98,8 @@ InstCheck screencloud
 if [ $? -ne 0 ];then
     screencloud &
 fi
+
+InstCheck corebird 
+if [ $? -ne 0 ];then
+    corebird &
+fi
