@@ -93,3 +93,8 @@ InstCheck firefox
 if [ $? -ne 0 ];then
     firefox &
 fi
+
+InstCheck screencloud 
+if [ $? -ne 0 ];then
+    screencloud &
+fi
