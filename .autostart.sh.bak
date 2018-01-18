@@ -89,17 +89,12 @@ if [ $? -ne 0 ];then
     nixnote2 &
 fi
 
-InstCheck firefox 
+InstCheck chromium 
 if [ $? -ne 0 ];then
-    firefox &
+    chromium &
 fi
 
 InstCheck screencloud 
 if [ $? -ne 0 ];then
     screencloud &
-fi
-
-InstCheck corebird 
-if [ $? -ne 0 ];then
-    corebird &
 fi

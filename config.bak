@@ -302,15 +302,13 @@ for_window [class="Hexchat"] floating enable, move scratchpad
 for_window [class="Zeal"] floating enable
 for_window [class="Spotify"] floating enable, move scratchpad
 for_window [class="Clementine"] floating enable, move scratchpad
-for_window [class="Corebird"] floating enable, move scratchpad
 for_window [class="vncviewer"] floating enable
 
 bindsym $mod+Mod1+0 [class="Slack"] scratchpad show
 bindsym $mod+Mod1+9 [class="Telegram"] scratchpad show
-bindsym $mod+Mod1+8 [class="Corebird"] scratchpad show
-bindsym $mod+Mod1+7 [class="Hexchat"] scratchpad show
-bindsym $mod+Mod1+6 [class="Spotify"] scratchpad show
-bindsym $mod+Mod1+5 [class="Clementine"] scratchpad show
-bindsym $mod+Mod1+4 [class="electron-xiami"] scratchpad show
+bindsym $mod+Mod1+8 [class="Hexchat"] scratchpad show
+bindsym $mod+Mod1+7 [class="Spotify"] scratchpad show
+bindsym $mod+Mod1+6 [class="Clementine"] scratchpad show
+bindsym $mod+Mod1+5 [class="electron-xiami"] scratchpad show
 # end
 # editor by jason @2017 
