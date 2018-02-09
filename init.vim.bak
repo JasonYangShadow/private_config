@@ -77,6 +77,3 @@ let g:vim_markdown_preview_hotkey='<C-p>'
 let g:vim_markdown_preview_use_xdg_open=1
 "let vim_markdown_preview_github=1
 "
-let g:spacevim_enable_ycm = 1
-
-let g:spacevim_enable_neomake = 0
