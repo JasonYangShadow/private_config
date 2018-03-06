@@ -33,12 +33,6 @@ install_i3(){
     yaourt -S xorg-server i3-gaps i3-scrot i3blocks i3lock i3status powerline-fonts-git
 }
 
-install_spacevim(){
-    echo "----------------------git clone spacevim--------------------------------------"
-    curl -sLf https://spacevim.org/install.sh | bash
-    cp ./init.vim.bak ~/.SpaceVim.d/init.vim
-}
-
 install_ohmyzsh(){
     echo "----------------------git clone oh my sh--------------------------------------"
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
@@ -140,16 +134,6 @@ main(){
             fc-cache ~/.local/share/fonts
             echo "remember to copy torrc and create relative json file for ss"
             ;;
-        spacevim )
-            root=`echo $EUID`
-            if [[ $root -eq 0 ]]; then
-                echo "please execute this script using common user, not root"
-                exit -1
-            fi
-
-            echo "--------------------install spacevim---------------------------------"
-            install_spacevim
-            ;;
         ohmyzsh )
             root=`echo $EUID`
             if [[ $root -eq 0 ]];then
@@ -161,7 +145,7 @@ main(){
             cp ./.zshrc.bak ~/.zshrc
             ;;
         * )
-            echo "type is one of {base base_add software config spacevim ohmyzsh i3}"
+            echo "type is one of {base base_add software config ohmyzsh i3}"
             exit 0;
             ;;
     esac
