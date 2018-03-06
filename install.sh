@@ -9,7 +9,7 @@ linux-firmware aic94xx-firmware wd719-firmware nfs-3g nfs-utils gnome-keyring
 polkit-gnome tmux rfkill openssh python-virtualenv net-tools tpbi clang) 
 BASE_ADD=(unclutter redshift vlc viewnior markdown mupdf zathura zathura-cb zathura-djvu zathura-ps zathura-pdf-mupdf fcitx fcitx-gtk3 fcitx-configtool fcitx-googlepinyin fcitx-kkc xfce4-power-manager isousb cronie shadowsocks proxychains-ng tor arm dnsutils xclip compton lua xscreensaver traceroute mtr sshfs)
 SOFTWARES=(chromium thunderbird slack-desktop uget ctags telegram-desktop-bin
-latex-beamer auctex nodejs npm electron nodejs-hexo-cli neofetch texlive-most docker qt4 simplescreenrecorder wqy-microhei lxappearance dropbox megasync downgrader variety feh lyx typora wps-office ttf-wps-fonts bleachbit go bashdb hexchat)
+latex-beamer auctex nodejs npm electron nodejs-hexo-cli neofetch texlive-most docker qt4 simplescreenrecorder wqy-microhei lxappearance dropbox megasync downgrader variety feh wps-office ttf-wps-fonts bleachbit go bashdb hexchat)
 
 install(){
     paras=("$1")
