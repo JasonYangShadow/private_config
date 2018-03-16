@@ -2,14 +2,14 @@
 
 INSTALLED_PACKAGE=~/installed_package
 BASE=(arandr sysstat mesa lm_sensors acpi acpid git gdb update-grub base-devel
-neovim zsh tmux python2-pip pulseaudio pavucontrol alsa-utils networkmanager
+vim zsh tmux python2-pip pulseaudio pavucontrol alsa-utils networkmanager
 network-manager-applet dhclient terminator rofi feh ranger pcmanfm gparted htop
 gvfs exfat-utils xdotool xdgutils dmraid dmidecode dosfstools iptables
 linux-firmware aic94xx-firmware wd719-firmware nfs-3g nfs-utils gnome-keyring
-polkit-gnome tmux rfkill openssh python-virtualenv net-tools tpbi clang) 
-BASE_ADD=(unclutter redshift vlc viewnior markdown mupdf zathura zathura-cb zathura-djvu zathura-ps zathura-pdf-mupdf fcitx fcitx-gtk3 fcitx-configtool fcitx-googlepinyin fcitx-kkc xfce4-power-manager isousb cronie shadowsocks proxychains-ng tor arm dnsutils xclip compton lua xscreensaver traceroute mtr sshfs)
+polkit-gnome rfkill openssh python-virtualenv net-tools tpbi clang) 
+BASE_ADD=(emacs unclutter redshift vlc viewnior markdown mupdf zathura zathura-cb zathura-djvu zathura-ps zathura-pdf-mupdf fcitx fcitx-gtk3 fcitx-configtool fcitx-googlepinyin fcitx-kkc xfce4-power-manager isousb cronie shadowsocks proxychains-ng tor arm dnsutils xclip compton lua xscreensaver traceroute mtr sshfs)
 SOFTWARES=(chromium thunderbird slack-desktop uget ctags telegram-desktop-bin
-latex-beamer auctex nodejs npm electron nodejs-hexo-cli neofetch texlive-most docker qt4 simplescreenrecorder wqy-microhei lxappearance dropbox megasync downgrader variety feh wps-office ttf-wps-fonts bleachbit go bashdb hexchat)
+latex-beamer auctex nodejs npm electron nodejs-hexo-cli neofetch texlive-most docker qt4 simplescreenrecorder wqy-microhei lxappearance dropbox megasync downgrader variety wps-office ttf-wps-fonts bleachbit go bashdb hexchat)
 
 install(){
     paras=("$1")
@@ -36,6 +36,11 @@ install_i3(){
 install_ohmyzsh(){
     echo "----------------------git clone oh my sh--------------------------------------"
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+}
+
+install_spacemacs(){
+  echo "------------------git clone spacemacs-------------------"
+  git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 }
 
 main(){
@@ -144,6 +149,17 @@ main(){
             install_ohmyzsh
             cp ./.zshrc.bak ~/.zshrc
             ;;
+        spacemacs )
+          root=`echo $EUID`
+          if [[ $root -eq 0 ]];then
+            echo "please execute this script using common user, not root"
+            exit -1
+          fi
+          echo "----------------------install
+          spacemacs--------------------------"
+          install_spacemacs
+          cp ./.spacemacs.bak ~/.spacemacs
+          ;;
         * )
             echo "type is one of {base base_add software config ohmyzsh i3}"
             exit 0;
