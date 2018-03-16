@@ -1,0 +1,56 @@
+#!/bin/bash
+#
+# This script is run by Variety when a new wallpaper is set.
+# You can use bash, python or whatever suits you for the script.
+# Here you can put custom commands for setting the wallpaper on your specific desktop environment
+# or run commands like notify-send to notify you of the change, or you can
+# run commands that would theme your browser, login screen or whatever you desire.
+#
+# PARAMETERS:
+# $1: The first passed parameter is the absolute path to the wallpaper image to be set as wallpaper
+# (after effects, clock, etc. are applied).
+#
+# $2: The second passed parameter is "auto" when the wallpaper is changed automatically (i.e. regular change), "manual"
+# when the user has triggered the change or "refresh" when the change is triggered by a change in quotes, clock, etc.
+#
+# $3: The third passed parameter is the absolute path to the original wallpaper image (before effects, clock, etc.)
+#
+# EXAMPLE:
+# echo "$1" # /home/username/.config/variety/wallpaper/wallpaper-clock-fac0eef772f9b03bd9c0f82a79d72506.jpg
+# echo "$2" # auto
+# echo "$3" # /home/username/Pictures/Wallpapers/Nature/green-tunnel-1920x1080-wallpaper-861.jpg
+
+
+# Here you may apply some additional custom operations on the wallpaper before it is applied.
+# In the end put the path to the actual final wallpaper image file in the WP variable.
+# The default is to simply set WP=$1.
+WP=$1
+
+# KDE: Users on KDE 4 or Plasma < 5.7 will have to manually choose ~/Pictures/variety-wallpaper/ as a slideshow folder with a short interval.
+# Afterwards, with the command below, Variety will just overwrite the single file there when changing the wallpaper
+# and KDE will refresh it
+# On Plasma 5.7 and above, the wallpaper choosing is automatic.
+    # Plasma 5.7 introduced a new feature to set the wallpaper via a qdbus script:
+    # https://github.com/KDE/plasma-workspace/commit/903cbfd7e267a4812a6ec222eb7e1b5dd775686f
+    #if [[ -n ${KDE_SESSION_VERSION} && ${KDE_SESSION_VERSION} == '5' ]]; then
+    #    qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "
+    #    var allDesktops = desktops();
+    #    for (i=0; i < allDesktops.length; i++) {
+    #        d = allDesktops[i];
+    #        d.wallpaperPlugin = 'org.kde.image';
+    #        d.currentConfigGroup = Array('Wallpaper', 'org.kde.image', 'General');
+    #        d.writeConfig('Image', 'file://"$WP"')
+    #    }
+    #    "
+    #    # Reuse the exit code from qdbus
+    #    exit "$?"
+    #else
+        WALLDIR="/home/jason/Pictures/variety-wallpaper"
+        mkdir -p "$WALLDIR"
+        # Remove all old wallpapers
+        rm -fv ${WALLDIR}/*
+
+        NEWWP="${WALLDIR}/wallpaper-kde-$RANDOM.jpg"
+        cp "$WP" "$NEWWP"
+        touch "$NEWWP"
+    #fi

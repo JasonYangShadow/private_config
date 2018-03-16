@@ -1,4 +1,4 @@
-#!/bin/sh
+/bin/sh
 
 InstCheck(){
  inst=`ps -ef|grep -v grep|grep $1|wc -l`
@@ -82,11 +82,6 @@ fi
 InstCheck hexchat 
 if [ $? -ne 0 ];then
     hexchat &
-fi
-
-InstCheck nixnote2 
-if [ $? -ne 0 ];then
-    nixnote2 &
 fi
 
 InstCheck chromium 
