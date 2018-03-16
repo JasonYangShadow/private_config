@@ -88,7 +88,8 @@ bindsym $mod+w layout tabbed
 bindsym $mod+q layout toggle split
 
 #workspace default settings
-workspace_layout default
+#workspace_layout default
+workspace_layout tabbed 
 
 #automatically switching workspace
 workspace_auto_back_and_forth yes
@@ -222,7 +223,7 @@ client.background       #ffffff
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id python2 ~/.i3/monitor.py
 exec ~/.autostart.sh &
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+#exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 
 #volume and screen light control
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
