@@ -57,7 +57,74 @@ class Xrandr:
             raise ValueError('no output')
 
 
+class XrandrV2:
+
+    def __init__(self, portmap):
+        if os.path.exists("/usr/bin/xrandr"):
+            self.__output = subprocess.check_output('/usr/bin/xrandr', shell = False)
+            self.__portmap = portmap
+            self.__connected_list = []
+            self.__resolutions = [] 
+            self.__disconnected_list = [] 
+        else:
+            raise ValueError("xrandr doesn't exist")
+
+    def generate_conf(self):
+        if not self.__portmap is None:
+            lines = string.split(self.__output,'\n')
+            b_connect = False
+            for line in lines:
+                if string.find(line," connected ") != -1:
+                    c_index = string.index(line," connected ") 
+                    self.__connected_list.append(string.strip(line[:c_index]))
+                    b_connect = True
+                elif string.find(line," disconnected ") != -1:
+                    d_index = string.index(line," disconnected ")
+                    self.__disconnected_list.append(string.strip(line[:d_index]))
+                else:
+                    if b_connect is True:
+                        m = re.search(r'\b([0-9]{4}x[0-9]{3,4})\b', line, re.I)
+                        if m is not None:
+                            resolution = m.group(0) 
+                            self.__resolutions.append(resolution)
+                        b_connect = False
+
+            if len(self.__connected_list) > 0:
+                self.cmd = "xrandr "
+                self.lcmd = ""
+                self.mcmd = ""
+                self.rcmd = ""
+                self.connected_map = {}
+                self.loffset = 0
+                self.moffset = 0
+                self.roffset = 0
+                for idx,val in enumerate(self.__connected_list):
+                    self.connected_map[val] = self.__resolutions[idx]
+                for k,v in self.__portmap.items():
+                    if k in self.connected_map:
+                        if v == 'l':
+                           self.lcmd = self.lcmd + " --output " + k + " --mode " + self.connected_map[k] + " --rotate normal " + " --pos " + str(self.loffset) + "x0"
+                           self.loffset = self.loffset + int(string.strip(string.split(self.connected_map[k],'x')[0]))
+                        if v == 'm':
+                            if self.moffset == 0:
+                                self.moffset = self.moffset + self.loffset
+                            self.mcmd = self.mcmd + " --output " + k + " --primary --mode " + self.connected_map[k] + " --rotate normal " + " --pos " + str(self.moffset) + "x0"
+                            self.moffset = self.moffset + int(string.strip(string.split(self.connected_map[k],'x')[0]))
+                        if v == 'r':
+                            if self.roffset == 0:
+                                self.roffset = self.roffset + self.moffset
+                            self.rcmd = self.rcmd + " --output " + k + " --mode " + self.connected_map[k] + " --rotate normal " + " --pos " + str(self.roffset) + "x0"
+                            self.roffset = self.roffset + int(string.strip(string.split(self.connected_map[k],'x')[0]))
+                self.cmd = self.cmd + self.lcmd + self.mcmd + self.rcmd
+                subprocess.check_output(self.cmd, shell=True)
+                subprocess.check_output(['/usr/bin/variety','-n'], shell=False)
+                #print(self.cmd)
+        else:
+            raise ValueError("no port map found")
+
 
 if __name__ == '__main__':
-    xrandr = Xrandr(["LVDS-1","LVDS1","ePD1","ePD-1"])
+    #xrandr = Xrandr(["HDMI1","HDMI-1"])
+    #xrandr.generate_conf()
+    xrandr = XrandrV2({"DVI-I-1-3":"l","DVI-I-1-2":"l","DVI-I-1-1":"l","HDMI-1":"m","HDMI1":"m","VGA-1":"r","VGA1":"r"})
     xrandr.generate_conf()
