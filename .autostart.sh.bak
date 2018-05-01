@@ -84,7 +84,7 @@ if [ $? -ne 0 ];then
     tusk &
 fi
 
-InstCheck wewechat 
+InstCheck electronic-wechat 
 if [ $? -ne 0 ];then
-    wewechat &
+    electronic-wechat &
 fi
