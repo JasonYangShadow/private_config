@@ -301,6 +301,7 @@ for_window [class="Telegram"] floating enable, move scratchpad
 for_window [class="Spotify"] floating enable, move scratchpad
 for_window [class="Vncviewer"] floating enable
 for_window [class="Wewechat"] floating enable
+for_window [class="Zathura"] floating enable
 
 bindsym $mod+Mod1+0 [class="Slack"] scratchpad show
 bindsym $mod+Mod1+9 [class="Telegram"] scratchpad show
