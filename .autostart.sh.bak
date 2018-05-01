@@ -9,9 +9,9 @@ InstCheck(){
  fi
 }
 
-InstCheck fcitx 
+InstCheck ibus 
 if [ $? -ne 0 ];then
-    fcitx & 
+    ibus-daemon -drx & 
 fi
 
 InstCheck nm-applet 
@@ -74,22 +74,17 @@ if [ $? -ne 0 ];then
     python2 /opt/thefanclub/overgrive/overgrive &
 fi
 
-InstCheck zeal 
-if [ $? -ne 0 ];then
-    zeal &
-fi
-
-InstCheck hexchat 
-if [ $? -ne 0 ];then
-    hexchat &
-fi
-
 InstCheck chromium 
 if [ $? -ne 0 ];then
     chromium &
 fi
 
-InstCheck screencloud 
+InstCheck tusk 
 if [ $? -ne 0 ];then
-    screencloud &
+    tusk &
+fi
+
+InstCheck wewechat 
+if [ $? -ne 0 ];then
+    wewechat &
 fi
