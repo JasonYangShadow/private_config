@@ -1,5 +1,5 @@
 ## the resources are from this website: http://kumarcode.com/Colorful-i3/
-separator_block_width=14
+separator_block_width=8
 
 [memory]
 label=
@@ -22,11 +22,19 @@ color=#004B8D
 interval=10
 
 [wireless]
-label=
-instance=wlp2s0
+label= 
+instance=wlp3s0
 command=/usr/lib/i3blocks/iface
-color=#F2552C
+color=#FF3300
 interval=10
+
+[wireless]
+label= 
+instance=wlp0s29u1u5
+command=/usr/lib/i3blocks/iface
+color=#FF3300
+interval=10
+
 
 [tor]
 label=
