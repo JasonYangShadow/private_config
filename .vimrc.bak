@@ -8,10 +8,7 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-fugitive'
-Plugin 'kien/ctrlp.vim'
+Plugin 'VundleVim/Vundle.vim' Plugin 'scrooloose/nerdtree' Plugin 'tpope/vim-fugitive' Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -129,3 +126,8 @@ nmap <F8> :TagbarToggle<CR>
 let g:UltiSnipsExpandTrigger='<tab>'
 let g:UltiSnipsJumpForwardTrigger='<tab>'
 let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
+
+"tab operation
+nmap <C-u> :tabp<CR>
+nmap <C-i> :tabn<CR>
+nmap <C-y> :tabnew<CR>
