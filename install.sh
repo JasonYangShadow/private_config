@@ -6,14 +6,14 @@ vim zsh tmux python2-pip pulseaudio pavucontrol alsa-utils networkmanager
 network-manager-applet dhclient terminator rofi feh ranger pcmanfm gparted htop
 gvfs exfat-utils xdotool xdgutils dmraid dmidecode dosfstools iptables
 linux-firmware aic94xx-firmware wd719-firmware nfs-3g nfs-utils gnome-keyring
-polkit-gnome rfkill openssh python-virtualenv net-tools tpbi) 
+polkit-gnome rfkill openssh python-virtualenv net-tools) 
 BASE_ADD=(unclutter redshift vlc viewnior markdown mupdf zathura
 zathura-cb zathura-djvu zathura-ps zathura-pdf-mupdf ibus ibus-kkc ibus-pinyin
 ibus-qt libibus libusb libusbmuxd xfce4-power-manager isousb cronie shadowsocks proxychains-ng tor arm dnsutils xclip compton lua xscreensaver traceroute mtr sshfs)
 SOFTWARES=(chromium thunderbird slack-desktop uget ctags telegram-desktop-bin
-latex-beamer nodejs npm electron nodejs-hexo-cli neofetch texlive-most docker
+nodejs npm electron nodejs-hexo-cli neofetch texlive-most docker
 qt4 simplescreenrecorder wqy-microhei lxappearance dropbox megasync downgrader
-variety wps-office ttf-wps-fonts go bashdb tusk screencloud)
+variety wps-office ttf-wps-fonts go bashdb tusk spotify realvnc-vnc-viewer)
 
 install(){
     paras=("$1")
