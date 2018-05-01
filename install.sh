@@ -13,7 +13,8 @@ ibus-qt libibus libusb libusbmuxd xfce4-power-manager isousb cronie shadowsocks 
 SOFTWARES=(chromium thunderbird slack-desktop uget ctags telegram-desktop-bin
 nodejs npm electron nodejs-hexo-cli neofetch texlive-most docker
 qt4 simplescreenrecorder wqy-microhei lxappearance dropbox megasync downgrader
-variety wps-office ttf-wps-fonts go bashdb tusk spotify realvnc-vnc-viewer)
+variety wps-office ttf-wps-fonts go bashdb tusk spotify realvnc-vnc-viewer
+electronic-wechat)
 
 install(){
     paras=("$1")
