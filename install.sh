@@ -10,7 +10,7 @@ polkit-gnome rfkill openssh python-virtualenv net-tools)
 BASE_ADD=(unclutter redshift vlc viewnior markdown mupdf zathura
 zathura-cb zathura-djvu zathura-ps zathura-pdf-mupdf ibus ibus-kkc ibus-pinyin
 ibus-qt libibus libusb libusbmuxd xfce4-power-manager isousb cronie shadowsocks proxychains-ng tor arm dnsutils xclip compton lua xscreensaver traceroute mtr sshfs)
-SOFTWARES=(chromium thunderbird slack-desktop uget ctags telegram-desktop-bin
+SOFTWARES=(google-chrome thunderbird slack-desktop uget ctags telegram-desktop-bin
 nodejs npm electron nodejs-hexo-cli neofetch texlive-most docker
 qt4 simplescreenrecorder wqy-microhei lxappearance dropbox megasync downgrader
 variety wps-office ttf-wps-fonts go bashdb tusk spotify realvnc-vnc-viewer
