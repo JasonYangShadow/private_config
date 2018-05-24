@@ -17,6 +17,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'fatih/vim-go'
 Plugin 'vim-latex/vim-latex'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'Chiel92/vim-autoformat'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -135,5 +136,8 @@ nmap <C-u> :tabp<CR>
 nmap <C-i> :tabn<CR>
 nmap <C-y> :tabnew<CR>
 nmap <C-o> :tabclose<CR>
+
+"autofomat
+nnoremap <F3> :Autoformat <CR>
 
 " for ycm problem, cd ~/.vim/bundle/youcompleteme && ./install.py
