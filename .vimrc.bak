@@ -18,6 +18,7 @@ Plugin 'fatih/vim-go'
 Plugin 'vim-latex/vim-latex'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'vim-syntastic/syntastic'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -141,3 +142,13 @@ nmap <C-o> :tabclose<CR>
 nnoremap <F3> :Autoformat <CR>
 
 " for ycm problem, cd ~/.vim/bundle/youcompleteme && ./install.py
+
+"syntastic checking settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
