@@ -3,7 +3,6 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=/home/jason/.oh-my-zsh
-# Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="agnoster"
@@ -93,4 +92,5 @@ alias yr='yaourt -R'
 [ -z "$TMUX"  ] && { exec tmux && exit;}
 
 export GOPATH=/home/jason/go
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin:/home/jason/miniconda3/bin
+export VIRTUAL_ENV_DISABLE_PROMPT=1
