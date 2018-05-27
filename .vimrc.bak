@@ -19,6 +19,7 @@ Plugin 'vim-latex/vim-latex'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'terryma/vim-multiple-cursors'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -83,20 +84,6 @@ set incsearch
 set ignorecase
 set smartcase
 set showmatch
-map <leader><space> :let @/=''<cr> " clear search
-
-" Remap help key.
-inoremap <F1> <ESC>:set invfullscreen<CR>a
-nnoremap <F1> :set invfullscreen<CR>
-vnoremap <F1> :set invfullscreen<CR>
-
-" Textmate holdouts
-
-" Formatting
-map <leader>f gqip
-
-" Visualize tabs and newlines
-set listchars=tab:▸\ ,eol:¬
 
 " Color scheme (terminal)
 set t_Co=256
@@ -135,7 +122,7 @@ nmap <C-y> :tabnew<CR>
 nmap <C-o> :tabclose<CR>
 
 "autofomat
-nnoremap <F3> :Autoformat <CR>
+nnoremap <F12> :Autoformat <CR>
 
 " for ycm problem, cd ~/.vim/bundle/youcompleteme && ./install.py
 
@@ -148,3 +135,14 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+"settings for multiple cursors
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_start_word_key      = '<C-]>'
+let g:multi_cursor_select_all_word_key = '<A-]>'
+let g:multi_cursor_start_key           = 'g<C-]>'
+let g:multi_cursor_select_all_key      = 'g<A-]>'
+let g:multi_cursor_next_key            = '<C-]>'
+let g:multi_cursor_prev_key            = '<C-[>'
+let g:multi_cursor_skip_key            = '<C-\>'
+let g:multi_cursor_quit_key            = '<Esc>'
