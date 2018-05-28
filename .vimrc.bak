@@ -20,6 +20,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'rafi/awesome-vim-colorschemes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -88,17 +89,15 @@ set showmatch
 " Color scheme (terminal)
 set t_Co=256
 set background=dark
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
 " put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 " in ~/.vim/colors/ and uncomment:
-colorscheme solarized
+colorscheme molokai 
 
 
 "settings for plugins
 "
 "Nerdtree
-map <C-n> :NERDTreeToggle<CR>
+map <F2> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -108,12 +107,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode = 'ra'
 
 "Tagbar
-nmap <F8> :TagbarToggle<CR>
-
-"ultisnips
-let g:UltiSnipsExpandTrigger='<tab>'
-let g:UltiSnipsJumpForwardTrigger='<tab>'
-let g:UltiSnipsJumpBackwardTrigger='<s-tab>'
+nmap <F12> :TagbarToggle<CR>
 
 "tab operation
 nmap <C-u> :tabp<CR>
@@ -122,7 +116,7 @@ nmap <C-y> :tabnew<CR>
 nmap <C-o> :tabclose<CR>
 
 "autofomat
-nnoremap <F12> :Autoformat <CR>
+nnoremap <C-f> :Autoformat <CR>
 
 " for ycm problem, cd ~/.vim/bundle/youcompleteme && ./install.py
 
@@ -146,3 +140,14 @@ let g:multi_cursor_next_key            = '<C-]>'
 let g:multi_cursor_prev_key            = '<C-[>'
 let g:multi_cursor_skip_key            = '<C-\>'
 let g:multi_cursor_quit_key            = '<Esc>'
+
+"youcompleteme and ultisnips
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-m>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
