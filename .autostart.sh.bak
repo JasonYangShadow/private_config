@@ -74,9 +74,9 @@ if [ $? -ne 0 ];then
     python2 /opt/thefanclub/overgrive/overgrive &
 fi
 
-InstCheck chromium 
+InstCheck chrome 
 if [ $? -ne 0 ];then
-    chromium &
+    google-chrome-stable &
 fi
 
 InstCheck tusk 
@@ -87,4 +87,9 @@ fi
 InstCheck electronic-wechat 
 if [ $? -ne 0 ];then
     electronic-wechat &
+fi
+
+InstCheck zoom 
+if [ $? -ne 0 ];then
+    zoom &
 fi
