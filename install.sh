@@ -14,7 +14,7 @@ SOFTWARES=(google-chrome thunderbird slack-desktop uget ctags telegram-desktop-b
 nodejs npm electron nodejs-hexo-cli neofetch texlive-most docker
 qt4 simplescreenrecorder wqy-microhei lxappearance dropbox megasync downgrader
 variety wps-office ttf-wps-fonts go bashdb tusk spotify realvnc-vnc-viewer
-electronic-wechat)
+electronic-wechat zoom)
 
 install(){
     paras=("$1")
