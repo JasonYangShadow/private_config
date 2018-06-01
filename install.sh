@@ -11,10 +11,9 @@ BASE_ADD=(unclutter redshift vlc viewnior markdown mupdf zathura
 zathura-cb zathura-djvu zathura-ps zathura-pdf-mupdf ibus ibus-kkc ibus-pinyin
 ibus-qt libibus libusb libusbmuxd xfce4-power-manager isousb cronie shadowsocks proxychains-ng tor arm dnsutils xclip compton lua xscreensaver traceroute mtr sshfs)
 SOFTWARES=(google-chrome thunderbird slack-desktop uget ctags telegram-desktop-bin
-nodejs npm electron nodejs-hexo-cli neofetch texlive-most docker
+nodejs npm nodejs-hexo-cli neofetch texlive-most docker
 qt4 simplescreenrecorder wqy-microhei lxappearance dropbox megasync downgrader
-variety wps-office ttf-wps-fonts go bashdb tusk spotify realvnc-vnc-viewer
-electronic-wechat zoom)
+variety wps-office ttf-wps-fonts go bashdb spotify realvnc-vnc-viewer zoom)
 
 install(){
     paras=("$1")
