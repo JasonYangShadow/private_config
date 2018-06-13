@@ -1,17 +1,18 @@
-/bin/sh
+#!/bin/sh
 
 InstCheck(){
  inst=`ps -ef|grep -v grep|grep $1|wc -l`
  if [ $inst -ge 1 ];then
      return 0 
- else return 1 fi
+ else 
+     return 1 
+fi
 }
 
 InstCheck ibus 
 if [ $? -ne 0 ];then
     ibus-daemon -drx & 
 fi
-
 InstCheck nm-applet 
 if [ $? -ne 0 ];then
     nm-applet & 
