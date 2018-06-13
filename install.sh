@@ -130,6 +130,7 @@ main(){
             cp ./ss.py.bak ~/.i3/ss.py
             cp ./bandwidth.bak ~/.i3/bandwidth
             cp ./.zprofile.bak ~/.zprofile
+            cp ./.compton.conf.bak ~/.compton.conf
             
             echo "---------------------copy customized fons--------------------------------------"
             mkdir -p ~/.local/share/fonts
@@ -154,4 +155,4 @@ main(){
     esac
 }
 
-main $@ | tee "~/installment.log" 
+main $@ | tee "~/installment.log"
