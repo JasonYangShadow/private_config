@@ -70,8 +70,7 @@ runtime! macros/matchit.vim
 " Rendering
 set ttyfast
 
-" Status bar
-set laststatus=2
+" Status bar set laststatus=2
 
 " Last line
 set showmode
@@ -92,6 +91,7 @@ set background=dark
 " put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 " in ~/.vim/colors/ and uncomment:
 colorscheme molokai 
+hi Normal guibg=NONE ctermbg=NONE
 
 
 "settings for plugins
