@@ -10,7 +10,9 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim' 
 Plugin 'scrooloose/nerdtree' 
 Plugin 'tpope/vim-fugitive' 
-Plugin 'kien/ctrlp.vim'
+Plugin 'junegunn/fzf.vim'
+Plugin 'rking/ag.vim'
+"use pacman -S fzf silver-searcher-git
 Plugin 'majutsushi/tagbar'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -61,16 +63,8 @@ set shiftwidth=4
 set tabstop=4 
 set expandtab
 
-" Cursor motion
-set scrolloff=3
-set backspace=indent,eol,start
-set matchpairs+=<:> " use % to jump between pairs
-runtime! macros/matchit.vim
-
 " Rendering
 set ttyfast
-
-" Status bar set laststatus=2
 
 " Last line
 set showmode
@@ -101,10 +95,6 @@ map <F2> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-"Ctrip vim
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_working_path_mode = 'ra'
 
 "Tagbar
 nmap <F12> :TagbarToggle<CR>
