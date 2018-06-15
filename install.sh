@@ -10,8 +10,7 @@ polkit-gnome rfkill openssh python-virtualenv net-tools)
 BASE_ADD=(unclutter redshift vlc viewnior markdown mupdf zathura
 zathura-cb zathura-djvu zathura-ps zathura-pdf-mupdf ibus ibus-kkc ibus-pinyin
 ibus-qt libibus libusb libusbmuxd xfce4-power-manager isousb cronie shadowsocks proxychains-ng tor arm dnsutils xclip compton lua xscreensaver traceroute mtr sshfs)
-SOFTWARES=(google-chrome thunderbird slack-desktop uget ctags telegram-desktop-bin
-nodejs npm nodejs-hexo-cli neofetch texlive-most docker
+SOFTWARES=(google-chrome thunderbird slack-desktop uget ctags nodejs npm nodejs-hexo-cli neofetch texlive-most docker
 qt4 simplescreenrecorder wqy-microhei lxappearance dropbox megasync downgrader
 variety wps-office ttf-wps-fonts go bashdb spotify realvnc-vnc-viewer zoom)
 
@@ -131,6 +130,7 @@ main(){
             cp ./ss.py.bak ~/.i3/ss.py
             cp ./bandwidth.bak ~/.i3/bandwidth
             cp ./.zprofile.bak ~/.zprofile
+            cp ./.compton.conf.bak ~/.compton.conf
             
             echo "---------------------copy customized fons--------------------------------------"
             mkdir -p ~/.local/share/fonts
@@ -155,4 +155,4 @@ main(){
     esac
 }
 
-main $@ | tee "~/installment.log" 
+main $@ | tee "~/installment.log"

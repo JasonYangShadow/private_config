@@ -1,19 +1,18 @@
-/bin/sh
+#!/bin/sh
 
 InstCheck(){
  inst=`ps -ef|grep -v grep|grep $1|wc -l`
  if [ $inst -ge 1 ];then
      return 0 
- else
+ else 
      return 1 
- fi
+fi
 }
 
 InstCheck ibus 
 if [ $? -ne 0 ];then
     ibus-daemon -drx & 
 fi
-
 InstCheck nm-applet 
 if [ $? -ne 0 ];then
     nm-applet & 
@@ -22,11 +21,6 @@ fi
 InstCheck slack 
 if [ $? -ne 0 ];then
     slack & 
-fi
-
-InstCheck telegram-desktop 
-if [ $? -ne 0 ];then
-    telegram-desktop & 
 fi
 
 InstCheck thunderbird 
@@ -59,11 +53,6 @@ if [ $? -ne 0 ];then
     megasync &
 fi
 
-InstCheck xscreensaver 
-if [ $? -ne 0 ];then
-    xscreensaver &
-fi
-
 InstCheck variety 
 if [ $? -ne 0 ];then
     variety &
@@ -79,17 +68,12 @@ if [ $? -ne 0 ];then
     google-chrome-stable &
 fi
 
-InstCheck tusk 
-if [ $? -ne 0 ];then
-    tusk &
-fi
-
-InstCheck electronic-wechat 
-if [ $? -ne 0 ];then
-    electronic-wechat &
-fi
-
 InstCheck zoom 
 if [ $? -ne 0 ];then
     zoom &
+fi
+
+InstCheck compton 
+if [ $? -ne 0 ];then
+    compton --config ~/.compton.conf -b &
 fi

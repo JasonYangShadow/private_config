@@ -297,15 +297,12 @@ for_window [class="Xarchiver"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Slack"] floating enable, move scratchpad
-for_window [class="Telegram"] floating enable, move scratchpad
 for_window [class="Spotify"] floating enable, move scratchpad
 for_window [class="Vncviewer"] floating enable
-for_window [class="Electronic-wechat"] floating enable
 for_window [class="Zathura"] floating enable
 for_window [class="Zoom"] floating enable
 
 bindsym $mod+Mod1+0 [class="Slack"] scratchpad show
-bindsym $mod+Mod1+9 [class="Telegram"] scratchpad show
-bindsym $mod+Mod1+8 [class="Spotify"] scratchpad show
+bindsym $mod+Mod1+9 [class="Spotify"] scratchpad show
 # end
 # editor by jason @2017 
