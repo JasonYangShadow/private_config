@@ -23,6 +23,7 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'rafi/awesome-vim-colorschemes'
+Plugin 'kien/ctrlp.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -84,7 +85,7 @@ set t_Co=256
 set background=dark
 " put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 " in ~/.vim/colors/ and uncomment:
-colorscheme molokai 
+colorscheme onedark 
 hi Normal guibg=NONE ctermbg=NONE
 
 
@@ -141,3 +142,7 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+"ctrlp settings
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_working_path_mode = 'ra'
