@@ -5,14 +5,12 @@ BASE=(arandr sysstat mesa lm_sensors acpi acpid git gdb update-grub base-devel
 vim zsh tmux python2-pip pulseaudio pavucontrol alsa-utils networkmanager
 network-manager-applet dhclient terminator rofi feh ranger pcmanfm gparted htop
 gvfs exfat-utils xdotool xdgutils dmraid dmidecode dosfstools iptables
-linux-firmware aic94xx-firmware wd719-firmware nfs-3g nfs-utils gnome-keyring
-polkit-gnome rfkill openssh python-virtualenv net-tools) 
+linux-firmware nfs-3g nfs-utils gnome-keyring polkit-gnome rfkill openssh python-virtualenv net-tools) 
 BASE_ADD=(unclutter redshift vlc viewnior markdown mupdf zathura
 zathura-cb zathura-djvu zathura-ps zathura-pdf-mupdf ibus ibus-kkc ibus-pinyin
-ibus-qt libibus libusb libusbmuxd xfce4-power-manager isousb cronie shadowsocks proxychains-ng tor arm dnsutils xclip compton lua xscreensaver traceroute mtr sshfs)
+ibus-qt libibus libusb libusbmuxd xfce4-power-manager isousb cronie shadowsocks proxychains-ng tor arm dnsutils xclip compton lua traceroute mtr sshfs)
 SOFTWARES=(google-chrome thunderbird slack-desktop uget ctags nodejs npm nodejs-hexo-cli neofetch texlive-most docker
-qt4 simplescreenrecorder wqy-microhei lxappearance dropbox megasync downgrader
-variety wps-office ttf-wps-fonts go bashdb spotify realvnc-vnc-viewer zoom)
+qt4 simplescreenrecorder wqy-microhei lxappearance dropbox megasync downgrader variety wps-office ttf-wps-fonts go bashdb spotify realvnc-vnc-viewer zoom latex-mk)
 
 install(){
     paras=("$1")
