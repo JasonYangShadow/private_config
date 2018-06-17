@@ -162,3 +162,7 @@ let g:livepreview_engine = 'xelatex'
 "vimtex settings
 let g:vimtex_compiler_engine = 'xelatex'
 let g:vimtex_compiler_latexmk = {'callback' : 0}
+
+"vim-syntastic
+nmap <F8> :SyntasticToggleMode<CR>
+let g:syntastic_tex_checkers = []
