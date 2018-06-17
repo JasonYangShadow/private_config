@@ -24,6 +24,8 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'rafi/awesome-vim-colorschemes'
 Plugin 'kien/ctrlp.vim'
+Plugin 'lervag/vimtex'
+Plugin 'xuhdev/vim-latex-live-preview'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -85,7 +87,7 @@ set t_Co=256
 set background=dark
 " put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 " in ~/.vim/colors/ and uncomment:
-colorscheme onedark 
+colorscheme materialbox 
 hi Normal guibg=NONE ctermbg=NONE
 
 
@@ -146,3 +148,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "ctrlp settings
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode = 'ra'
+
+"live preview
+let g:livepreview_previewer = 'zathura'
+let g:livepreview_engine = 'xelatex'
