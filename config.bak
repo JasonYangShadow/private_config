@@ -301,8 +301,10 @@ for_window [class="Spotify"] floating enable, move scratchpad
 for_window [class="Vncviewer"] floating enable
 for_window [class="Zathura"] floating enable
 for_window [class="Zoom"] floating enable
+for_window [class="Gitter"] floating enable, move scratchpad
 
 bindsym $mod+Mod1+0 [class="Slack"] scratchpad show
-bindsym $mod+Mod1+9 [class="Spotify"] scratchpad show
+bindsym $mod+Mod1+9 [class="Gitter"] scratchpad show
+bindsym $mod+Mod1+8 [class="Spotify"] scratchpad show
 # end
 # editor by jason @2017 
