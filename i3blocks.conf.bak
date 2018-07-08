@@ -82,7 +82,6 @@ signal=10
 color=#CFB095
 
 [battery]
-label=
 command=python3 ~/.i3/battery.py
 markup=pango
 interval=10
