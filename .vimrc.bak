@@ -166,3 +166,7 @@ let g:vimtex_compiler_latexmk = {'callback' : 0}
 "vim-syntastic
 nmap <F8> :SyntasticToggleMode<CR>
 let g:syntastic_tex_checkers = []
+
+"set clipboard
+" install gvim firstly rather than vim itself. uninstall vim and install gvim
+set clipboard=unnamedplus
