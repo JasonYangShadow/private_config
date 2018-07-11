@@ -171,3 +171,8 @@ let g:syntastic_tex_checkers = []
 "set clipboard
 " install gvim firstly rather than vim itself. uninstall vim and install gvim
 set clipboard=unnamedplus
+
+"markdown preview
+nnoremap <F7> :MarkdownPreview<CR>
+nnoremap <S-F7> :MarkdownPreviewStop<CR>
+
