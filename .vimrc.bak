@@ -26,8 +26,8 @@ Plugin 'rafi/awesome-vim-colorschemes'
 Plugin 'kien/ctrlp.vim'
 Plugin 'lervag/vimtex'
 "install latex-mk firstly
-Plugin 'xuhdev/vim-latex-live-preview'
-Plugin 'JamshedVesuna/vim-markdown-preview'
+Plugin 'iamcco/mathjax-support-for-mkdp'
+Plugin 'iamcco/markdown-preview.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -171,9 +171,3 @@ let g:syntastic_tex_checkers = []
 "set clipboard
 " install gvim firstly rather than vim itself. uninstall vim and install gvim
 set clipboard=unnamedplus
-
-"markdown preview
-let vim_markdown_preview_hotkey='<F7>'
-let vim_markdown_preview_use_xdg_open=1
-let vim_markdown_preview_browser='Firefox'
-let vim_markdown_preview_temp_file=1
