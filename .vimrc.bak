@@ -12,7 +12,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive' 
 Plugin 'junegunn/fzf.vim'
 Plugin 'rking/ag.vim'
-"use pacman -S fzf the_silver_search(silver-searcher-git)
+"use pacman -S fzf the_silver_searcher(silver-searcher-git)
 Plugin 'majutsushi/tagbar'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -177,3 +177,4 @@ set clipboard=unnamedplus
 nnoremap <F7> :MarkdownPreview<CR>
 nnoremap <S-F7> :MarkdownPreviewStop<CR>
 
+imap jj <Esc>
