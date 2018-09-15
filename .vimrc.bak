@@ -14,11 +14,11 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'rking/ag.vim'
 "use pacman -S fzf the_silver_searcher(silver-searcher-git)
 Plugin 'majutsushi/tagbar'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
 Plugin 'fatih/vim-go'
 Plugin 'vim-latex/vim-latex'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'Shougo/neosnippet.vim'
+Plugin 'Shougo/neosnippet-snippets'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
@@ -27,6 +27,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'lervag/vimtex'
 Plugin 'xuhdev/vim-latex-live-preview'
 "install latex-mk firstly
+" for makrdown preview
 Plugin 'iamcco/mathjax-support-for-mkdp'
 Plugin 'iamcco/markdown-preview.vim'
 
@@ -142,16 +143,27 @@ let g:multi_cursor_prev_key            = '<C-[>'
 let g:multi_cursor_skip_key            = '<C-\>'
 let g:multi_cursor_quit_key            = '<Esc>'
 
-"youcompleteme and ultisnips
-" make YCM compatible with UltiSnips (using supertab)
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-m>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
+" neocomplete configuration
+let g:neocomplete#enable_at_startup = 1
 
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+"neospippet configuration
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
 
 "ctrlp settings
 let g:ctrlp_map = '<c-p>'
@@ -177,4 +189,5 @@ set clipboard=unnamedplus
 nnoremap <F7> :MarkdownPreview<CR>
 nnoremap <S-F7> :MarkdownPreviewStop<CR>
 
+"map jj to Esc
 imap jj <Esc>
