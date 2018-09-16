@@ -13,6 +13,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/fzf.vim'
 Plugin 'rking/ag.vim'
 "use pacman -S fzf the_silver_searcher(silver-searcher-git)
+"apt-get install silversearcher-ag
 Plugin 'majutsushi/tagbar'
 Plugin 'fatih/vim-go'
 Plugin 'vim-latex/vim-latex'
