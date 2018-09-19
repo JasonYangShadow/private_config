@@ -31,6 +31,9 @@ Plugin 'xuhdev/vim-latex-live-preview'
 Plugin 'iamcco/mathjax-support-for-mkdp'
 Plugin 'iamcco/markdown-preview.vim'
 Plugin 'Raimondi/delimitMate'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -92,7 +95,7 @@ set t_Co=256
 set background=dark
 " put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 " in ~/.vim/colors/ and uncomment:
-colorscheme deep-space 
+colorscheme onedark
 hi Normal guibg=NONE ctermbg=NONE
 
 
@@ -192,3 +195,7 @@ nnoremap <S-F7> :MarkdownPreviewStop<CR>
 
 "map jj to Esc
 imap jj <Esc>
+
+"vim-aireline configuration
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='dark'
