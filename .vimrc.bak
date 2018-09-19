@@ -13,7 +13,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'junegunn/fzf.vim'
 Plugin 'rking/ag.vim'
 "use pacman -S fzf the_silver_searcher(silver-searcher-git)
-"apt-get install silversearcher-ag
 Plugin 'majutsushi/tagbar'
 Plugin 'fatih/vim-go'
 Plugin 'vim-latex/vim-latex'
@@ -31,6 +30,7 @@ Plugin 'xuhdev/vim-latex-live-preview'
 " for makrdown preview
 Plugin 'iamcco/mathjax-support-for-mkdp'
 Plugin 'iamcco/markdown-preview.vim'
+Plugin 'Raimondi/delimitMate'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -92,7 +92,7 @@ set t_Co=256
 set background=dark
 " put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 " in ~/.vim/colors/ and uncomment:
-colorscheme materialbox 
+colorscheme deep-space 
 hi Normal guibg=NONE ctermbg=NONE
 
 
