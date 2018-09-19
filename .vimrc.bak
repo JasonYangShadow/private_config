@@ -15,6 +15,7 @@ Plugin 'rking/ag.vim'
 "use pacman -S fzf the_silver_searcher(silver-searcher-git)
 Plugin 'majutsushi/tagbar'
 Plugin 'fatih/vim-go'
+Plugin 'osyo-manga/vim-marching'
 Plugin 'vim-latex/vim-latex'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/neosnippet.vim'
@@ -199,3 +200,7 @@ imap jj <Esc>
 "vim-aireline configuration
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='dark'
+let g:airline_powerline_fonts = 1
+
+"vim-marching
+let g:marching_enable_neocomplete=1
