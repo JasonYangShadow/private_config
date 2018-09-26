@@ -70,7 +70,7 @@ set visualbell
 set encoding=utf-8
 
 " unfold all codes
-set foldlevel=99
+set nofoldenable
 
 " Whitespace
 set listchars=tab:>-,trail:-,eol:$ list
