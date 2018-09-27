@@ -180,6 +180,7 @@ let g:ctrlp_working_path_mode = 'ra'
 "live preview
 let g:livepreview_previewer = 'zathura'
 let g:livepreview_engine = 'xelatex'
+let g:livepreview_cursorhold_recompile = 0
 
 "vimtex settings
 let g:vimtex_compiler_engine = 'xelatex'
