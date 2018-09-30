@@ -24,11 +24,6 @@ if [ $? -ne 0 ];then
     slack & 
 fi
 
-InstCheck telegram-desktop 
-if [ $? -ne 0 ];then
-    telegram-desktop & 
-fi
-
 InstCheck thunderbird 
 if [ $? -ne 0 ];then
     thunderbird & 
@@ -57,16 +52,6 @@ fi
 InstCheck megasync
 if [ $? -ne 0 ];then
     megasync &
-fi
-
-InstCheck xscreensaver 
-if [ $? -ne 0 ];then
-    xscreensaver &
-fi
-
-InstCheck variety 
-if [ $? -ne 0 ];then
-    variety &
 fi
 
 InstCheck overgrive 

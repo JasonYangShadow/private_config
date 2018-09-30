@@ -83,14 +83,9 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias v='vim'
 alias top='htop'
-alias yi='yaourt --noconfirm -Sy'
-alias ys='yaourt -Ss'
-alias yu='yaourt -Syu --aur'
-alias yc="sudo rm -r /var/cache/pacman/pkg/*.xz"
-alias yr='yaourt -R'
 
 [ -z "$TMUX"  ] && { exec tmux && exit;}
 
 export GOPATH=/home/jason/go
-export PATH=$PATH:$GOPATH/bin:/home/jason/miniconda3/bin
+export PATH=$PATH:$GOPATH/bin
 export VIRTUAL_ENV_DISABLE_PROMPT=1
