@@ -158,6 +158,8 @@ let g:multi_cursor_quit_key            = '<Esc>'
 
 " neocomplete configuration
 let g:neocomplete#enable_at_startup = 1
+let g:acp_enableAtStartup = 0
+let g:neocomplete#sources#syntax#min_keyword_length = 5
 
 "neospippet configuration
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
