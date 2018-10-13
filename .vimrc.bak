@@ -35,6 +35,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'junegunn/goyo.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -104,6 +105,9 @@ hi Normal guibg=NONE ctermbg=NONE
 
 
 "settings for plugins
+"
+"Goyo
+map <F6> :Goyo<CR>
 "
 "Nerdtree
 map <F2> :NERDTreeToggle<CR>
