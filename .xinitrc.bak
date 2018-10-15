@@ -6,7 +6,7 @@ export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 
-setxkbmap -option caps:escape
+setxkbmap -option ctrl:nocaps
 
 exec i3 
 
