@@ -38,6 +38,7 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'junegunn/goyo.vim'
 Plugin 'lambdalisue/gina.vim'
 Plugin 'dart-lang/dart-vim-plugin'
+Plugin 'moll/vim-node'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
