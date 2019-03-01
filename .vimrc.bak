@@ -39,6 +39,7 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'lambdalisue/gina.vim'
 Plugin 'dart-lang/dart-vim-plugin'
 Plugin 'moll/vim-node'
+Plugin 'c.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -74,6 +75,8 @@ set visualbell
 set encoding=utf-8
 
 " unfold all codes
+set foldmethod=syntax
+set foldlevel=2
 set nofoldenable
 
 " Whitespace
