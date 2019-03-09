@@ -59,6 +59,7 @@ filetype plugin indent on    " required
 " Turn on syntax highlighting
 syntax on
 
+set formatoptions-=cro
 " Security
 set modelines=0
 
