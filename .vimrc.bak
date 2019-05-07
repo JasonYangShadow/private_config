@@ -164,7 +164,6 @@ let g:multi_cursor_quit_key            = '<Esc>'
 
 "completor configurations
 let g:completor_clang_binary = '/usr/bin/clang'
-map <tab> <Plug>CompletorCppJumpToPlaceholder
 imap <tab> <Plug>CompletorCppJumpToPlaceholder
 let g:completor_gocode_binary = '/home/jason/go/bin/gocode'
 let g:completor_python_binary = '/usr/lib/python3.7/site-packages/jedi'
