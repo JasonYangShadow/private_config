@@ -15,15 +15,11 @@ Plugin 'rking/ag.vim'
 "use pacman -S fzf the_silver_searcher(silver-searcher-git)
 Plugin 'majutsushi/tagbar'
 Plugin 'fatih/vim-go'
-Plugin 'osyo-manga/vim-marching'
 Plugin 'vim-latex/vim-latex'
-Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/neosnippet.vim'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'Chiel92/vim-autoformat'
-Plugin 'vim-syntastic/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'rafi/awesome-vim-colorschemes'
 Plugin 'kien/ctrlp.vim'
 Plugin 'lervag/vimtex'
 Plugin 'xuhdev/vim-latex-live-preview'
@@ -100,9 +96,6 @@ set showmatch
 " Color scheme (terminal)
 set t_Co=256
 set background=dark
-" put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
-" in ~/.vim/colors/ and uncomment:
-colorscheme dracula
 hi Normal guibg=NONE ctermbg=NONE
 
 "set backup location
@@ -111,16 +104,6 @@ set directory=/tmp//
 set undodir=/tmp//
 
 "settings for plugins
-"
-"settings for neocomplete
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-"
 "Goyo
 map <F6> :Goyo<CR>
 "
@@ -135,6 +118,7 @@ nmap <F12> :TagbarToggle<CR>
 
 "latex preview
 nmap <F9> :LLPStartPreview<CR>
+
 "tab operation
 nmap <C-u> :tabp<CR>
 nmap <C-i> :tabn<CR>
@@ -143,21 +127,6 @@ nmap <C-o> :tabclose<CR>
 
 "autofomat
 nnoremap <C-f> :Autoformat <CR>
-
-"set local leader key
-let g:mapleader = "\\"
-
-" for ycm problem, cd ~/.vim/bundle/youcompleteme && ./install.py
-
-"syntastic checking settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 "settings for multiple cursors
 let g:multi_cursor_use_default_mapping=0
@@ -202,12 +171,6 @@ let g:livepreview_cursorhold_recompile = 0
 let g:vimtex_compiler_engine = 'xelatex'
 let g:vimtex_compiler_latexmk = {'callback' : 0}
 
-"vim-syntastic
-nmap <F8> :SyntasticToggleMode<CR>
-let g:syntastic_tex_checkers = []
-let g:syntastic_check_on_open = 0
-let g:syntastic_mode_map = { 'mode': 'passive'}
-
 "set clipboard
 " install gvim firstly rather than vim itself. uninstall vim and install gvim
 set clipboard=unnamedplus
@@ -223,6 +186,3 @@ imap jj <Esc>
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='dark'
 let g:airline_powerline_fonts = 1
-
-"vim-marching
-let g:marching_enable_neocomplete=1
