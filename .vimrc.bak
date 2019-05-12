@@ -9,15 +9,17 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim' 
 Plugin 'scrooloose/nerdtree' 
-Plugin 'tpope/vim-fugitive' 
+"ultimate search tool
 Plugin 'junegunn/fzf.vim'
 Plugin 'rking/ag.vim'
 "use pacman -S fzf the_silver_searcher(silver-searcher-git)
 Plugin 'majutsushi/tagbar'
+"help check go related things
 Plugin 'fatih/vim-go'
 Plugin 'vim-latex/vim-latex'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'terryma/vim-multiple-cursors'
+"fuzzy search
 Plugin 'kien/ctrlp.vim'
 Plugin 'lervag/vimtex'
 Plugin 'xuhdev/vim-latex-live-preview'
@@ -26,12 +28,14 @@ Plugin 'xuhdev/vim-latex-live-preview'
 Plugin 'iamcco/mathjax-support-for-mkdp'
 Plugin 'iamcco/markdown-preview.vim'
 Plugin 'Raimondi/delimitMate'
+"for showing git status and which lines are modified
 Plugin 'airblade/vim-gitgutter'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+"for zen read
 Plugin 'junegunn/goyo.vim'
+"for Gina command
 Plugin 'lambdalisue/gina.vim'
-Plugin 'dart-lang/dart-vim-plugin'
 Plugin 'moll/vim-node'
 Plugin 'vim-ruby/vim-ruby'
 
@@ -136,11 +140,6 @@ let g:multi_cursor_next_key            = '<C-]>'
 let g:multi_cursor_prev_key            = '<C-[>'
 let g:multi_cursor_skip_key            = '<C-\>'
 let g:multi_cursor_quit_key            = '<Esc>'
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
 
 "ctrlp settings
 let g:ctrlp_map = '<c-p>'
