@@ -17,8 +17,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'fatih/vim-go'
 Plugin 'osyo-manga/vim-marching'
 Plugin 'vim-latex/vim-latex'
-"Plugin 'Shougo/neocomplete.vim'
-Plugin 'maralla/completor.vim'
+Plugin 'Shougo/neocomplete.vim'
 Plugin 'Shougo/neosnippet.vim'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'Chiel92/vim-autoformat'
@@ -113,6 +112,15 @@ set undodir=/tmp//
 
 "settings for plugins
 "
+"settings for neocomplete
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+"
 "Goyo
 map <F6> :Goyo<CR>
 "
@@ -161,13 +169,6 @@ let g:multi_cursor_next_key            = '<C-]>'
 let g:multi_cursor_prev_key            = '<C-[>'
 let g:multi_cursor_skip_key            = '<C-\>'
 let g:multi_cursor_quit_key            = '<Esc>'
-
-"completor configurations
-let g:completor_clang_binary = '/usr/bin/clang'
-map <C-l> <Plug>CompletorCppJumpToPlaceholder
-imap <C-l> <Plug>CompletorCppJumpToPlaceholder
-let g:completor_gocode_binary = '/home/jason/go/bin/gocode'
-let g:completor_python_binary = '/usr/lib/python3.7/site-packages/jedi'
 
 "neospippet configuration
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
