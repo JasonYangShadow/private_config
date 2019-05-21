@@ -38,6 +38,9 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'lambdalisue/gina.vim'
 Plugin 'moll/vim-node'
 Plugin 'vim-ruby/vim-ruby'
+"sudo pacman -S python-markdown
+"sudo pip install markdown
+Plugin 'vim-scripts/VimRepress'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
