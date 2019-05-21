@@ -38,7 +38,8 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'lambdalisue/gina.vim'
 Plugin 'moll/vim-node'
 Plugin 'vim-ruby/vim-ruby'
-"sudo pip install markdown2
+"sudo pacman -S python2-pip
+"sudo pip2 install markdown2 markdown
 Plugin 'vim-scripts/VimRepress'
 
 " All of your Plugins must be added before the following line
