@@ -105,6 +105,9 @@ set backupdir=/tmp//
 set directory=/tmp//
 set undodir=/tmp//
 
+"map leader key
+let mapleader = ","
+
 "settings for plugins
 "Goyo
 map <F6> :Goyo<CR>
