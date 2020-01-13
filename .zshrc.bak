@@ -87,9 +87,7 @@ alias top='htop'
 [ -z "$TMUX"  ] && { exec tmux && exit;}
 
 export GOPATH=/home/jason/go
-export SNAPBIN=/var/lib/snapd/snap/bin
-export PATH=$PATH:$GOPATH/bin:$SNAPBIN
+export PATH=$PATH:$GOPATH/bin
 export VIRTUAL_ENV_DISABLE_PROMPT=1
-export VAGRANT_HOME=/home/jason/data/vagrant
 export RTV_EDITOR=vim
-export RTV_BROWSER=google-chrome
+export RTV_BROWSER=firefox
