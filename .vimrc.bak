@@ -20,7 +20,7 @@ Plugin 'vim-latex/vim-latex'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'terryma/vim-multiple-cursors'
 "fuzzy search
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'lervag/vimtex'
 Plugin 'xuhdev/vim-latex-live-preview'
 "install latex-mk firstly
@@ -40,6 +40,10 @@ Plugin 'moll/vim-node'
 Plugin 'rust-lang/rust.vim'
 Plugin 'danilo-augusto/vim-afterglow'
 Plugin 'wsdjeg/vim-lua'
+
+"install nerd font first in mega
+"always loads this plugin as the last one
+Plugin 'ryanoasis/vim-devicons'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
