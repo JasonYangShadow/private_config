@@ -20,7 +20,7 @@ Plugin 'vim-latex/vim-latex'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'terryma/vim-multiple-cursors'
 "fuzzy search
-Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 Plugin 'lervag/vimtex'
 Plugin 'xuhdev/vim-latex-live-preview'
 "install latex-mk firstly
@@ -38,12 +38,6 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'lambdalisue/gina.vim'
 Plugin 'moll/vim-node'
 Plugin 'rust-lang/rust.vim'
-Plugin 'danilo-augusto/vim-afterglow'
-Plugin 'wsdjeg/vim-lua'
-
-"install nerd font first in mega
-"always loads this plugin as the last one
-Plugin 'ryanoasis/vim-devicons'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -79,6 +73,9 @@ set visualbell
 set encoding=utf-8
 
 " unfold all codes
+set foldmethod=indent
+set foldnestmax=10
+set foldlevel=2
 set nofoldenable
 
 " Whitespace
@@ -176,9 +173,5 @@ imap jj <Esc>
 
 "vim-aireline configuration
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='afterglow'
+let g:airline_theme='dark'
 let g:airline_powerline_fonts = 1
-
-"vim color themes settings
-colorscheme afterglow
-let g:afterglow_inherit_background = 1
