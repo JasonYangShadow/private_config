@@ -40,6 +40,7 @@ Plugin 'moll/vim-node'
 Plugin 'rust-lang/rust.vim'
 Plugin 'danilo-augusto/vim-afterglow'
 Plugin 'wsdjeg/vim-lua'
+Plugin 'gabrielelana/vim-markdown'
 
 "install nerd font first in mega
 "always loads this plugin as the last one
@@ -182,3 +183,7 @@ let g:airline_powerline_fonts = 1
 "vim color themes settings
 colorscheme afterglow
 let g:afterglow_inherit_background = 1
+
+"vim option for vim-markdown
+let g:markdown_enable_conceal = 1
+let g:markdown_enable_spell_checking = 0
