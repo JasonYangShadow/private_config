@@ -101,10 +101,14 @@ source $ZSH/oh-my-zsh.sh
 alias v="vim"
 alias top="htop"
 alias dev="ssh dev -t tmux a #"
-alias nvidia='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia "$@"'
+alias nv='__NV_PRIME_RENDER_OFFLOAD=1 __GLX_VENDOR_LIBRARY_NAME=nvidia "$@"'
 
 export RTV_EDITOR="vim"
 export GOPATH=$HOME/go
 export GOROOT=/usr/local/go
-export PATH=$GOROOT/bin:$GOPATH/bin:$PATH
+export JAVA_HOME=/usr/lib/jvm/default-java
+export FLUTTERROOT=/opt/flutter
+export PATH=$GOROOT/bin:$GOPATH/bin:$FLUTTERROOT/bin:$HOME/.local/bin:$JAVA_HOME/bin:$PATH
 export VAGRANT_HOME=$HOME/data/.vagrant.d
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
