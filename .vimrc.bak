@@ -42,6 +42,9 @@ Plugin 'danilo-augusto/vim-afterglow'
 Plugin 'wsdjeg/vim-lua'
 Plugin 'gabrielelana/vim-markdown'
 
+" for javascript plugin
+Plugin 'pangloss/vim-javascript'
+
 "install nerd font first in mega
 "always loads this plugin as the last one
 Plugin 'ryanoasis/vim-devicons'
@@ -156,7 +159,7 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_working_path_mode = 'ra'
 
 "live preview
-let g:livepreview_previewer = 'zathura'
+let g:livepreview_previewer = 'open -a Preview'
 let g:livepreview_engine = 'xelatex'
 let g:livepreview_cursorhold_recompile = 0
 
