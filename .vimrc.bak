@@ -41,6 +41,7 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'danilo-augusto/vim-afterglow'
 Plugin 'wsdjeg/vim-lua'
 Plugin 'gabrielelana/vim-markdown'
+Plugin 'udalov/kotlin-vim'
 
 " for javascript plugin
 Plugin 'pangloss/vim-javascript'
